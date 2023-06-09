@@ -39,6 +39,10 @@ module.exports = {
       9: "9em",
       10: "10em",
     },
+    extend: {
+      columns: {
+        masonry: "3",
+      },
+    },
   },
-  plugins: [],
 };

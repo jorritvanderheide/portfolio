@@ -2,10 +2,10 @@ import PortfolioGallery from "@/components/PortfolioGallery";
 
 const Portfolio = () => {
   return (
-    <div>
+    <section>
       {/* @ts-expect-error Async Server Component */}
       <PortfolioGallery />
-    </div>
+    </section>
   );
 };
 

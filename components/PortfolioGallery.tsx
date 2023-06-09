@@ -17,10 +17,11 @@ const PortfolioGallery = async () => {
   const portfolioArray = await getPortfolioItems();
 
   return (
-    <div>
+    <div className="columns-masonry gap-6 px-2">
       {portfolioArray?.map((item: PortfolioProps, index: number) => (
         <PortfolioItem
           key={index}
+          isPortrait={item.isPortrait}
           src={item.src}
           title={item.title}
           url={item.url}

@@ -25,6 +25,7 @@ export default async function handle(
   let portfolioArray: PortfolioProps[] = [];
   data.results.map((item: any) => {
     portfolioArray.push({
+      isPortrait: item.properties.Portrait.checkbox,
       src: item.cover.external.url,
       title: item.properties.Name.title[0].plain_text,
       url: item.properties.Slug.rich_text[0].plain_text,
