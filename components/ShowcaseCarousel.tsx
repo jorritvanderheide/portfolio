@@ -1,16 +1,12 @@
 import ShowcaseItem from "./ShowcaseItem";
-import type ShowcaseProps from "@/types/ShowcaseProps";
+import type ShowcaseProps from "@/types/ShowcaseItemProps";
 
 const getShowcaseItems = async () => {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_FETCH_URL}/api/showcase`
-  );
+  ).then((res) => res.json());
 
-  if (!response.ok) {
-    throw new Error("Failed to fetch data");
-  }
-
-  return response.json();
+  return response;
 };
 
 const ShowcaseCarousel = async () => {
@@ -21,9 +17,9 @@ const ShowcaseCarousel = async () => {
       {showcaseArray?.map((item: ShowcaseProps, index: number) => (
         <ShowcaseItem
           key={index}
-          src={item.src}
+          image={item.image}
           title={item.title}
-          url={item.url}
+          slug={item.slug}
         />
       ))}
     </div>

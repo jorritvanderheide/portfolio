@@ -1,30 +1,26 @@
 import PortfolioItem from "@/components/PortfolioItem";
-import type PortfolioProps from "@/types/PortfolioProps";
+import type PortfolioProps from "@/types/PortfolioItemProps";
 
 const getPortfolioItems = async () => {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_FETCH_URL}/api/portfolio`
-  );
+  ).then((res) => res.json());
 
-  if (!response.ok) {
-    throw new Error("Failed to fetch data");
-  }
-
-  return response.json();
+  return response;
 };
 
 const PortfolioGallery = async () => {
   const portfolioArray = await getPortfolioItems();
 
   return (
-    <div className="columns-masonry gap-6 px-2">
+    <div className="mx-auto max-w-[80%] columns-masonry gap-6">
       {portfolioArray?.map((item: PortfolioProps, index: number) => (
         <PortfolioItem
           key={index}
+          image={item.image}
           isPortrait={item.isPortrait}
-          src={item.src}
+          slug={item.slug}
           title={item.title}
-          url={item.url}
         />
       ))}
     </div>

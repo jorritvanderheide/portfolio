@@ -1,41 +1,44 @@
 import { FunctionComponent } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import type PortfolioProps from "@/types/PortfolioProps";
+import type PortfolioProps from "@/types/PortfolioItemProps";
+import AnimatedLink from "./AnimatedLink";
 
 const PortfolioItem: FunctionComponent<PortfolioProps> = ({
   isPortrait,
-  src,
+  image,
   title,
-  url,
+  slug,
 }) => {
   return (
-    <article className="mb-4 w-full">
-      <Link href={`/portfolio/${url}`}>
-        <div className={`flex flex-col gap-1 ${isPortrait && "px-3"}`}>
-          <figure className="relative w-full">
-            {isPortrait ? (
-              <Image
-                className="w-full object-cover"
-                src={src}
-                alt={title}
-                width={720}
-                height={1280}
-              />
-            ) : (
-              <Image
-                className="w-full object-cover"
-                src={src}
-                alt={title}
-                width={1280}
-                height={720}
-              />
-            )}
-          </figure>
-          <p className="font-headings text-body uppercase">{title}</p>
-        </div>
-      </Link>
-    </article>
+    <AnimatedLink>
+      <article className="mb-4 w-full">
+        <Link href={`/portfolio/${slug}`}>
+          <div className={`flex flex-col gap-1 ${isPortrait && "px-3"}`}>
+            <figure className="relative w-full">
+              {isPortrait ? (
+                <Image
+                  className="w-full object-cover"
+                  src={image}
+                  alt={title}
+                  width={720}
+                  height={1280}
+                />
+              ) : (
+                <Image
+                  className="w-full object-cover"
+                  src={image}
+                  alt={title}
+                  width={1280}
+                  height={720}
+                />
+              )}
+            </figure>
+            <p className="font-headings text-body uppercase">{title}</p>
+          </div>
+        </Link>
+      </article>
+    </AnimatedLink>
   );
 };
 

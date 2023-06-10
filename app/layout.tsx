@@ -28,9 +28,7 @@ const RootLayout: FunctionComponent<RootLayoutProps> = ({ children }) => {
   return (
     <html lang="en">
       <body
-        className={`bg-white text-body ${
-          (openSans.variable, sora.variable, spaceGrotesk.variable)
-        }`}
+        className={`bg-white text-body ${openSans.variable} ${sora.variable} ${spaceGrotesk.variable}`}
       >
         <Header />
         <main className="absolute w-screen pt-header">{children}</main>

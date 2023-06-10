@@ -1,6 +1,6 @@
 import ShowcaseCarousel from "@/components/ShowcaseCarousel";
 
-const Home = () => {
+const ShowcasePage = () => {
   return (
     <div className="-mt-header h-[100svh] w-screen">
       {/* @ts-expect-error Async Server Component */}
@@ -9,4 +9,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default ShowcasePage;

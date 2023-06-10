@@ -1,6 +1,6 @@
 import PortfolioGallery from "@/components/PortfolioGallery";
 
-const Portfolio = () => {
+const PortfolioPage = () => {
   return (
     <section>
       {/* @ts-expect-error Async Server Component */}
@@ -9,4 +9,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default PortfolioPage;

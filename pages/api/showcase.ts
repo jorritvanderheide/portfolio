@@ -1,13 +1,13 @@
 import notion from "@/lib/notion/notion";
 import type { NextApiRequest, NextApiResponse } from "next";
-import type ShowcaseProps from "@/types/ShowcaseProps";
+import type ShowcaseItemProps from "@/types/ShowcaseItemProps";
 
 export default async function handle(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   const data = await notion.databases.query({
-    database_id: process.env.NOTION_DATABASE_PROJECTS,
+    database_id: process.env.NOTION_DATABASE_PROJECTS!,
     filter: {
       and: [
         {
@@ -32,12 +32,12 @@ export default async function handle(
     ],
   });
 
-  let showcaseArray: ShowcaseProps[] = [];
+  let showcaseArray: ShowcaseItemProps[] = [];
   data.results.map((item: any) => {
     showcaseArray.push({
-      src: item.cover.external.url,
+      image: item.cover.external.url,
+      slug: item.properties.Slug.rich_text[0].plain_text,
       title: item.properties.Name.title[0].plain_text,
-      url: item.properties.Slug.rich_text[0].plain_text,
     });
   });
 
