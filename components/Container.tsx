@@ -7,7 +7,7 @@ const Container: FunctionComponent<ContainerProps> = ({
 }) => {
   return (
     <div
-      className={`w-max-prose mx-auto flex flex-col items-center px-1 ${className}`}
+      className={`mx-auto flex max-w-prose flex-col items-center gap-1 px-1 ${className}`}
     >
       {children}
     </div>

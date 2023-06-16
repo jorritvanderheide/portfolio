@@ -58,7 +58,8 @@ export default async function handle(
   }
 
   const contentBlocks: MdBlock[] = await n2m.pageToMarkdown(data.results[0].id);
-  const contentString: MdStringObject = n2m.toMarkdownString(contentBlocks);
+  const contentObject: MdStringObject = n2m.toMarkdownString(contentBlocks);
+  const contentString: string = contentObject.parent;
 
   const portfolioItem: PortfolioItemPageProps = {
     description: description,

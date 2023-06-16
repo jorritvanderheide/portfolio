@@ -29,7 +29,7 @@ export const theme = {
   screens: {},
   spacing: {
     header: "5em",
-    prose: "clamp(100%, 66ch, 90ch)",
+    prose: "min(66ch, 100%)",
     1: "1em",
     2: "2em",
     3: "3em",
