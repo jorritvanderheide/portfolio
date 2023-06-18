@@ -37,7 +37,7 @@ export default async function handle(
     showcaseArray.push({
       image: item.cover.external.url,
       slug: item.properties.Slug.rich_text[0].plain_text,
-      title: item.properties.Name.title[0].plain_text,
+      title: item.properties.Name.title[0].plain_text.toLowerCase(),
     });
   });
 

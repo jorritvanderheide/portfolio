@@ -3,12 +3,16 @@ import AnimatedLink from "@/components/AnimatedLink";
 
 const links = [
   {
-    name: "portfolio",
-    slug: "portfolio",
+    name: "about me",
+    slug: "about-me",
   },
   {
-    name: "about",
-    slug: "about",
+    name: "learning activities",
+    slug: "learning-activities",
+  },
+  {
+    name: "development",
+    slug: "deveopment",
   },
 ];
 
@@ -16,14 +20,14 @@ const Header = () => {
   return (
     <header className="top-0 fixed z-10 h-header w-screen font-display text-display font-medium text-white mix-blend-difference">
       <nav className="flex h-full w-full items-center justify-between px-2">
-        <AnimatedLink>
-          <Link href="/">Jorrit v/d Heide</Link>
-        </AnimatedLink>
+        <Link href="/">
+          <AnimatedLink>jorrit v/d heide</AnimatedLink>
+        </Link>
         <ul className="flex gap-1">
           {links.map((link) => (
-            <AnimatedLink key={link.slug}>
-              <Link href={`/${link.slug}`}>{link.name}</Link>
-            </AnimatedLink>
+            <Link key={link.slug} href={`/${link.slug}`}>
+              <AnimatedLink>{link.name}</AnimatedLink>
+            </Link>
           ))}
         </ul>
       </nav>

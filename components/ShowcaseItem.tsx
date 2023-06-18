@@ -3,28 +3,28 @@ import Image from "next/image";
 import Link from "next/link";
 import type ShowcaseProps from "../types/ShowcaseItemProps";
 
-const ShowcaseItem: FunctionComponent<ShowcaseProps> = ({
+const ShowcaseItem: FunctionComponent<ShowcaseItemProps> = ({
   image,
-  placeholder,
+  priority,
   slug,
   title,
 }) => {
   return (
-    <article className="h-full w-full snap-center snap-always">
-      <Link className="h-full w-full" href={`/portfolio/${slug}`}>
-        <figure className="relative h-full w-full overflow-hidden">
-          <Image
-            className="object-cover"
-            src={image}
-            alt={title}
-            fill={true}
-            placeholder="blur"
-            blurDataURL={placeholder}
-          />
-          <h1 className="absolute bottom-2 right-2 font-display text-display font-medium text-white mix-blend-difference">
-            {title}
-          </h1>
-        </figure>
+    <article className="relative h-full w-full snap-center snap-always">
+      <figure className="relative h-full w-full overflow-hidden">
+        <Image
+          className="object-cover"
+          src={image}
+          alt={title}
+          fill={true}
+          priority={priority}
+        />
+      </figure>
+      <Link
+        href={`/portfolio/${slug}`}
+        className="absolute bottom-2 right-2 font-display text-display font-medium oldstyle-nums text-white mix-blend-difference"
+      >
+        <AnimatedLink>{title}</AnimatedLink>
       </Link>
     </article>
   );
