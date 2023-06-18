@@ -5,6 +5,7 @@ import type ShowcaseProps from "../types/ShowcaseItemProps";
 
 const ShowcaseItem: FunctionComponent<ShowcaseProps> = ({
   image,
+  placeholder,
   slug,
   title,
 }) => {
@@ -12,7 +13,14 @@ const ShowcaseItem: FunctionComponent<ShowcaseProps> = ({
     <article className="h-full w-full snap-center snap-always">
       <Link className="h-full w-full" href={`/portfolio/${slug}`}>
         <figure className="relative h-full w-full overflow-hidden">
-          <Image className="object-cover" src={image} alt={title} fill={true} />
+          <Image
+            className="object-cover"
+            src={image}
+            alt={title}
+            fill={true}
+            placeholder="blur"
+            blurDataURL={placeholder}
+          />
           <h1 className="absolute bottom-2 right-2 font-display text-display font-medium text-white mix-blend-difference">
             {title}
           </h1>
