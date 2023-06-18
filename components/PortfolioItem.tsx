@@ -2,13 +2,13 @@ import { FunctionComponent } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type PortfolioProps from "@/types/PortfolioItemProps";
-import AnimatedLink from "./AnimatedLink";
+import AnimatedLink from "@/components/AnimatedLink";
 
 const PortfolioItem: FunctionComponent<PortfolioProps> = ({
-  isPortrait,
   image,
-  title,
+  isPortrait,
   slug,
+  title,
 }) => {
   return (
     <AnimatedLink>

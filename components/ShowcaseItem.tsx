@@ -1,7 +1,8 @@
 import { FunctionComponent } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import type ShowcaseProps from "../types/ShowcaseItemProps";
+import AnimatedLink from "@/components/AnimatedLink";
+import type ShowcaseItemProps from "@/types/ShowcaseItemProps";
 
 const ShowcaseItem: FunctionComponent<ShowcaseItemProps> = ({
   image,

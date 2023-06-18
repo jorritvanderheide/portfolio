@@ -1,7 +1,6 @@
 export default interface ShowcaseItemProps {
-  priority: boolean;
   image: string;
-  placeholder: string;
+  priority?: boolean;
   slug: string;
   title: string;
 }
