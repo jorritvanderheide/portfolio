@@ -22,7 +22,7 @@ const ShowcaseItem: FunctionComponent<ShowcaseItemProps> = ({
         />
       </figure>
       <Link
-        href={`/portfolio/${slug}`}
+        href={`/learning-activities/${slug}`}
         className="absolute bottom-2 right-2 font-display text-display font-medium oldstyle-nums text-white mix-blend-difference"
       >
         <AnimatedLink>{title}</AnimatedLink>

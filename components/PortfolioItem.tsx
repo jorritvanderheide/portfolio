@@ -13,7 +13,7 @@ const PortfolioItem: FunctionComponent<PortfolioProps> = ({
   return (
     <AnimatedLink>
       <article className="mb-4 w-full">
-        <Link href={`/portfolio/${slug}`}>
+        <Link href={`/learning-activities/${slug}`}>
           <div className={`flex flex-col gap-1 ${isPortrait && "px-3"}`}>
             <figure className="relative w-full">
               {isPortrait ? (

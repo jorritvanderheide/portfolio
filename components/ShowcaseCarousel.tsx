@@ -23,10 +23,6 @@ const ShowcaseCarousel = async () => {
           title={item.title}
         />
       ))}
-      <p className="absolute bottom-2 left-2 font-display text-display font-medium oldstyle-nums text-white mix-blend-difference">
-        {Math.round(window?.scrollY / window?.innerHeight)}/
-        {showcaseArray?.length}
-      </p>
     </div>
   );
 };

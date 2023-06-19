@@ -1,8 +1,11 @@
 import notion from "@/lib/notion/notion";
-import type { NextApiResponse } from "next";
+import type { NextApiRequest, NextApiResponse } from "next";
 import type ShowcaseItemProps from "@/types/ShowcaseItemProps";
 
-export default async function handle(res: NextApiResponse) {
+export default async function handle(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   const data = await notion.databases.query({
     database_id: process.env.NOTION_DATABASE_PROJECTS!,
     filter: {
