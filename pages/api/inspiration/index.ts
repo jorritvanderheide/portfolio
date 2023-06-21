@@ -1,6 +1,6 @@
 import notion from "@/lib/notion/notion";
 import type { NextApiRequest, NextApiResponse } from "next";
-import type InspirationItemProps from "@/types/InspirationItemProps";
+import type LearningActivitiesItemProps from "@/types/LearningActivitiesItemProps";
 
 export default async function handle(
   req: NextApiRequest,
@@ -23,16 +23,17 @@ export default async function handle(
       ],
     });
 
-    let inspirationItems: InspirationItemProps[] = [];
+    let learningActivitiesItems: LearningActivitiesItemProps[] = [];
     data.results.map((item: any) => {
-      inspirationItems.push({
+      learningActivitiesItems.push({
         image: item.cover.external.url,
+        isPortrait: item.properties.Portrait.checkbox,
         slug: item.properties.Slug.rich_text[0].plain_text,
         title: item.properties.Name.title[0].plain_text,
       });
     });
 
-    res.status(200).json(inspirationItems);
+    res.status(200).json(learningActivitiesItems);
   } catch (error) {
     console.error("Error fetching content:", error);
     res.status(500).json({ error: "An error occurred fetching content" });
