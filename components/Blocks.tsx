@@ -3,7 +3,9 @@ import type BlockProps from "@/types/BlockProps";
 
 export const H1: FunctionComponent<BlockProps> = ({ children, className }) => {
   return (
-    <h1 className={`w-full font-headings text-body font-bold ${className}`}>
+    <h1
+      className={`w-full font-headings text-body font-bold lowercase ${className}`}
+    >
       {children}
     </h1>
   );
@@ -11,7 +13,9 @@ export const H1: FunctionComponent<BlockProps> = ({ children, className }) => {
 
 export const H2: FunctionComponent<BlockProps> = ({ children, className }) => {
   return (
-    <h2 className={`w-full font-headings text-body ${className}`}>
+    <h2
+      className={`w-full font-headings text-body font-medium lowercase ${className}`}
+    >
       {children}
     </h2>
   );

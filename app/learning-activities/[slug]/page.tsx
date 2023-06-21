@@ -44,13 +44,13 @@ const LearningActivityPage = async ({
   );
 
   return (
-    <section className="mx-auto mb-5 max-w-[80%]">
-      <div className="flex items-end md:-mt-header md:h-[90svh]">
-        <h1 className="mb-1 font-headings text-headings font-medium uppercase">
+    <section className="mx-auto mb-4 mt-2 px-0 md:px-4">
+      <div className="mx-2 flex items-end md:mx-0 md:-mt-header md:min-h-[75svh]">
+        <h1 className="font-headings text-headings font-medium uppercase">
           {learningActivity.title}
         </h1>
       </div>
-      <figure className="mb-5">
+      <figure className="my-4">
         <Image
           src={learningActivity.image}
           alt={learningActivity.title}

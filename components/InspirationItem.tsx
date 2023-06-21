@@ -14,9 +14,12 @@ const InspirationItem: FunctionComponent<InspirationItemProps> = ({
     <article className="w-full">
       <Link href={url} rel="noreferrer noopener" target="_blank">
         <AnimatedLink className="flex items-center gap-2">
-          <p className="font-headings text-body">
-            <span className="uppercase">{title};</span> {description}
-          </p>
+          <div>
+            <p className="mb-[0.25em] font-headings text-body uppercase">
+              {title}
+            </p>
+            <p className="font-headings text-body">{description}</p>
+          </div>
           <span className="material-icons h-full">call_made</span>
         </AnimatedLink>
       </Link>

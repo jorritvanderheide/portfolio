@@ -29,7 +29,7 @@ const Header = () => {
         <Link href="/">
           <AnimatedLink>Jorrit v/d Heide</AnimatedLink>
         </Link>
-        <ul className="flex gap-1">
+        <ul className="flex w-full justify-between gap-1 md:w-auto md:justify-normal">
           {links.map((link) => (
             <Link key={link.slug} href={`/${link.slug}`}>
               <AnimatedLink>

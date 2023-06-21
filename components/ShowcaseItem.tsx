@@ -1,7 +1,6 @@
 import { FunctionComponent } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import AnimatedLink from "@/components/AnimatedLink";
 import type ShowcaseItemProps from "@/types/ShowcaseItemProps";
 
 const ShowcaseItem: FunctionComponent<ShowcaseItemProps> = ({
@@ -23,9 +22,9 @@ const ShowcaseItem: FunctionComponent<ShowcaseItemProps> = ({
       </figure>
       <Link
         href={`/learning-activities/${slug}`}
-        className="absolute bottom-2 right-2 font-display text-display font-medium oldstyle-nums text-white mix-blend-difference"
+        className="absolute bottom-2 left-2 max-w-[calc(100vw_-_4em)] font-headings font-medium uppercase oldstyle-nums text-white mix-blend-difference"
       >
-        <AnimatedLink>{title}</AnimatedLink>
+        <p className="text-headings">{title}</p>
       </Link>
     </article>
   );
