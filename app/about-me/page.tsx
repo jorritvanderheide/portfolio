@@ -9,10 +9,6 @@ const getPageContent = async () => {
     `${process.env.NEXT_PUBLIC_BASE_FETCH_URL}/api/about-me`
   );
 
-  if (!response.ok) {
-    throw new Error("Failed to fetch data");
-  }
-
   return response.json();
 };
 

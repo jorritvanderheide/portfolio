@@ -9,10 +9,6 @@ const getLearningActivitiesItems = async () => {
     `${process.env.NEXT_PUBLIC_BASE_FETCH_URL}/api/learning-activities`
   );
 
-  if (!response.ok) {
-    throw new Error("Failed to fetch data");
-  }
-
   return response.json();
 };
 

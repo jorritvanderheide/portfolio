@@ -6,10 +6,6 @@ const getShowcaseItems = async () => {
     `${process.env.NEXT_PUBLIC_BASE_FETCH_URL}/api/showcase`
   );
 
-  if (!response.ok) {
-    throw new Error("Failed to fetch data");
-  }
-
   return response.json();
 };
 
