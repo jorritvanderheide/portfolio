@@ -1,16 +1,19 @@
-"use client";
-
 import Masonry from "react-masonry-css";
 import InspirationItem from "@/components/InspirationItem";
 import type InspirationItemProps from "@/types/InspirationItemProps";
 
-const getInspirationItems = async () => {
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_FETCH_URL}/api/inspiration`
-  ).then((res) => res.json());
+// const getInspirationItems = async () => {
+//   const response = await fetch(
+//     `${process.env.NEXT_PUBLIC_BASE_FETCH_URL}/api/inspiration`
+//   );
 
-  return response;
-};
+//   if (!response.ok) {
+//     console.log(response);
+//     throw new Error("Failed to fetch data");
+//   }
+
+//   return await response.json();
+// };
 
 const InspirationGrid = async () => {
   const breakpoints = {
@@ -19,7 +22,11 @@ const InspirationGrid = async () => {
     500: 1,
   };
 
-  const inspirationItems = await getInspirationItems();
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_FETCH_URL}/api/inspiration`
+  );
+
+  const inspirationItems = await response.json();
 
   return (
     <div className="mx-auto max-w-[80%]">
