@@ -19,11 +19,11 @@ const getPageContent = async () => {
 };
 
 const Growth = async () => {
-  // const pageContent: PageContentProps = await getPageContent();
+  const pageContent: PageContentProps = await getPageContent();
 
   return (
     <section className="mx-auto mb-5 max-w-[80%]">
-      {/* <div className="flex items-end md:-mt-header md:h-[90svh]">
+      <div className="flex items-end md:-mt-header md:h-[90svh]">
         <h1 className="mb-1 font-headings text-headings font-medium uppercase">
           {pageContent.title}
         </h1>
@@ -47,13 +47,13 @@ const Growth = async () => {
             p: ({ node, ...props }) => <P {...props} />,
             img: ({ node, ...props }) => (
               <Figure>
-                eslint-disable-next-line @next/next/no-img-element
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img alt="image" width={3840} height={2160} {...props} />
               </Figure>
             ),
           }}
         />
-      </Container> */}
+      </Container>
     </section>
   );
 };
