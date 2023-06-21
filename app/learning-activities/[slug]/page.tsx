@@ -2,42 +2,52 @@ import Image from "next/image";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import Container from "@/components/Container";
-import type PortfolioItemPageProps from "@/types/PortfolioItemPageProps";
-import type PortfolioItemProps from "@/types/PortfolioItemProps";
+import { H1, H2, P, Figure } from "@/components/Blocks";
+import AnimatedLink from "@/components/AnimatedLink";
+import type LearningActivityProps from "@/types/LearningActivityProps";
+import type LearningActivitiesItemProps from "@/types/LearningActivitiesItemProps";
 
 export const generateStaticParams = async () => {
-  const portfolioItems = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_FETCH_URL}/api/portfolio`
+  const learningActivities = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_FETCH_URL}/api/learning-activities`
   ).then((res) => res.json());
 
-  return portfolioItems.map((portfolioItem: PortfolioItemProps) => ({
-    slug: portfolioItem.slug,
-  }));
+  return learningActivities.map(
+    (learningActivity: LearningActivitiesItemProps) => ({
+      slug: learningActivity.slug,
+    })
+  );
 };
 
-const getPortfolioItem = async (slug: string) => {
-  const portfolioItemData = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_FETCH_URL}/api/portfolio/${slug}`
+const getLearningActivity = async (slug: string) => {
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_FETCH_URL}/api/learning-activities/${slug}`
   ).then((res) => res.json());
 
-  return portfolioItemData;
+  return response;
 };
 
-const PortfolioItemPage = async ({ params }: { params: { slug: string } }) => {
+const LearningActivityPage = async ({
+  params,
+}: {
+  params: { slug: string };
+}) => {
   const { slug } = params;
-  const data: PortfolioItemPageProps = await getPortfolioItem(slug);
+  const learningActivity: LearningActivityProps = await getLearningActivity(
+    slug
+  );
 
   return (
     <section className="mx-auto mb-5 max-w-[80%]">
-      <div className="-mt-header flex h-[90svh] items-end">
+      <div className="flex items-end md:-mt-header md:h-[90svh]">
         <h1 className="mb-1 font-headings text-headings font-medium uppercase">
-          {data.title}
+          {learningActivity.title}
         </h1>
       </div>
       <figure className="mb-5">
         <Image
-          src={data.image}
-          alt={data.title}
+          src={learningActivity.image}
+          alt={learningActivity.title}
           width={3840}
           height={2160}
           priority={true}
@@ -46,33 +56,33 @@ const PortfolioItemPage = async ({ params }: { params: { slug: string } }) => {
       <Container>
         <ReactMarkdown
           // eslint-disable-next-line react/no-children-prop
-          children={data.markdown}
+          children={learningActivity.markdown}
           components={{
-            h1: ({ node, ...props }) => (
-              <h2 className="font-headings text-body" {...props} />
+            h1: ({ node, ...props }) => <H1 {...props} />,
+            h2: ({ node, ...props }) => <H2 {...props} />,
+            p: ({ node, ...props }) => <P {...props} />,
+            img: ({ node, ...props }) => (
+              <Figure>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img alt="image" width={3840} height={2160} {...props} />
+              </Figure>
             ),
-            h2: ({ node, ...props }) => (
-              <h3 className="font-headings text-body" {...props} />
-            ),
-            p: ({ node, ...props }) => <p className=" text-body" {...props} />,
-            // img: ({ node, ...props }) => (
-            //   <figure className="aspect-auto h-auto w-full">
-            //     <Image className="" alt="image" fill={true} {...props} />
-            //   </figure>
-            // ),
           }}
         />
-        {data.hasReport && (
-          <Link
-            className="mt-1 w-full font-headings text-display uppercase"
-            href={`/reports/${slug}`}
-          >
-            Read the full report
-          </Link>
+        {learningActivity.hasReport && (
+          <div className="mt-2 w-full">
+            <Link
+              className="flex items-center font-headings text-display uppercase"
+              href={`/files/${slug}.pdf`}
+              target="_blank"
+            >
+              <AnimatedLink>Read the full report</AnimatedLink>
+            </Link>
+          </div>
         )}
       </Container>
     </section>
   );
 };
 
-export default PortfolioItemPage;
+export default LearningActivityPage;

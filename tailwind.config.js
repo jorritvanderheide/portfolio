@@ -26,10 +26,11 @@ export const theme = {
       1.25,
     ],
   },
-  screens: {},
   spacing: {
     header: "5em",
+    "header-mobile": "7.5em",
     prose: "min(66ch, 100%)",
+    0: "0",
     1: "1em",
     2: "2em",
     3: "3em",

@@ -17,16 +17,12 @@
 
   .masonry {
     display: flex;
-    margin-left: -6em;
+    margin-left: -4em;
     width: auto;
   }
-  .masonry-col {
-    padding-left: 6em;
-    background-clip: padding-box;
-  }
 
-  .masonry-col > div {
-    /* change div to reference your elements you put in <Masonry> */
-    margin-bottom: 30px;
+  .masonry-col {
+    padding-left: 4em;
+    background-clip: padding-box;
   }
 }

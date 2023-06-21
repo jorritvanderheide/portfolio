@@ -8,7 +8,7 @@ const AnimatedLink: FunctionComponent<AnimatedLinkProps> = ({
   children,
   scale,
 }) => {
-  const scaleValue = scale ? scale : 0.95;
+  const scaleValue = scale ? scale : 0.9;
 
   return (
     <motion.div

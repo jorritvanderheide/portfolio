@@ -1,12 +1,12 @@
-import PortfolioGallery from "@/components/PortfolioGallery";
+import LearningActivitiesGrid from "@/components/LearningActivitiesGrid";
 
-const PortfolioPage = () => {
+const LearningActivitiesPage = () => {
   return (
     <section>
       {/* @ts-expect-error Async Server Component */}
-      <PortfolioGallery />
+      <LearningActivitiesGrid />
     </section>
   );
 };
 
-export default PortfolioPage;
+export default LearningActivitiesPage;

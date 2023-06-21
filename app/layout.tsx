@@ -31,7 +31,9 @@ const RootLayout: FunctionComponent<RootLayoutProps> = ({ children }) => {
         className={`bg-white text-body ${openSans.variable} ${sora.variable} ${spaceGrotesk.variable}`}
       >
         <Header />
-        <main className="absolute w-screen pt-header">{children}</main>
+        <main className="pt-header-mobile absolute w-screen md:pt-header">
+          {children}
+        </main>
       </body>
     </html>
   );

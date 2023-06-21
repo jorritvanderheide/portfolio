@@ -7,7 +7,7 @@ export default async function handle(
   res: NextApiResponse
 ) {
   const data = await notion.databases.query({
-    database_id: process.env.NOTION_DATABASE_PROJECTS!,
+    database_id: process.env.NOTION_DATABASE_LEARNING_ACTIVITIES!,
     filter: {
       and: [
         {
@@ -32,14 +32,14 @@ export default async function handle(
     ],
   });
 
-  let showcaseArray: ShowcaseItemProps[] = [];
+  let showcaseItems: ShowcaseItemProps[] = [];
   data.results.map((item: any) => {
-    showcaseArray.push({
+    showcaseItems.push({
       image: item.cover.external.url,
       slug: item.properties.Slug.rich_text[0].plain_text,
       title: item.properties.Name.title[0].plain_text.toLowerCase(),
     });
   });
 
-  res.json(showcaseArray);
+  res.json(showcaseItems);
 }
