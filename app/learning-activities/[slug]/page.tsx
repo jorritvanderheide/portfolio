@@ -22,9 +22,13 @@ import type LearningActivitiesItemProps from "@/types/LearningActivitiesItemProp
 const getLearningActivity = async (slug: string) => {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_FETCH_URL}/api/learning-activities/${slug}`
-  ).then((res) => res.json());
+  );
 
-  return response;
+  if (!response.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  return response.json();
 };
 
 const LearningActivityPage = async ({

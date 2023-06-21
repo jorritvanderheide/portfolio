@@ -4,9 +4,13 @@ import type ShowcaseItemProps from "@/types/ShowcaseItemProps";
 const getShowcaseItems = async () => {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_FETCH_URL}/api/showcase`
-  ).then((res) => res.json());
+  );
 
-  return response;
+  if (!response.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  return response.json();
 };
 
 const ShowcaseCarousel = async () => {

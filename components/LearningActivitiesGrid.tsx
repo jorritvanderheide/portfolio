@@ -7,9 +7,13 @@ import type LearningActivitiesItemProps from "@/types/LearningActivitiesItemProp
 const getLearningActivitiesItems = async () => {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_FETCH_URL}/api/learning-activities`
-  ).then((res) => res.json());
+  );
 
-  return response;
+  if (!response.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  return response.json();
 };
 
 const LearningActivitiesGrid = async () => {

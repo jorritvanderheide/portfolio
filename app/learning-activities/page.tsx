@@ -1,5 +1,3 @@
-"use client";
-
 import LearningActivitiesGrid from "@/components/LearningActivitiesGrid";
 
 const LearningActivitiesPage = () => {

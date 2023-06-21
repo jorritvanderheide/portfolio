@@ -1,5 +1,3 @@
-"use client";
-
 import ShowcaseCarousel from "@/components/ShowcaseCarousel";
 
 const ShowcasePage = () => {

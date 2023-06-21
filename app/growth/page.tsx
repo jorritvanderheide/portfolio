@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import Container from "@/components/Container";
@@ -9,9 +7,13 @@ import type PageContentProps from "@/types/PageContentProps";
 const getPageContent = async () => {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_FETCH_URL}/api/growth`
-  ).then((res) => res.json());
+  );
 
-  return response;
+  if (!response.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  return response.json();
 };
 
 const Growth = async () => {
