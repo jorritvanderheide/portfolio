@@ -28,7 +28,7 @@ const LearningActivitiesGrid = async () => {
   const learningActivitiesItems = await getLearningActivitiesItems();
 
   return (
-    <div className="mx-auto max-w-[80%]">
+    <div className="mx-auto mt-2 max-w-[80%]">
       <Masonry
         breakpointCols={breakpoints}
         className="masonry"

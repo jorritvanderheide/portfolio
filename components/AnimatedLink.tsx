@@ -6,12 +6,14 @@ import type AnimatedLinkProps from "@/types/AnimatedLinkProps";
 
 const AnimatedLink: FunctionComponent<AnimatedLinkProps> = ({
   children,
+  className,
   scale,
 }) => {
-  const scaleValue = scale ? scale : 0.9;
+  const scaleValue = scale ? scale : 0.95;
 
   return (
     <motion.div
+      className={className}
       whileHover={{
         scale: scaleValue,
         transition: { duration: 0.3 },

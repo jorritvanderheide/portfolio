@@ -22,13 +22,13 @@ const Growth = async () => {
   const pageContent: PageContentProps = await getPageContent();
 
   return (
-    <section className="mx-auto mb-5 max-w-[80%]">
-      <div className="flex items-end md:-mt-header md:h-[90svh]">
-        <h1 className="mb-1 font-headings text-headings font-medium uppercase">
+    <section className="mx-auto mb-4 mt-2 max-w-[80%] md:mt-0">
+      <div className="flex items-end md:-mt-header md:h-[75svh]">
+        <h1 className="font-headings text-headings font-medium uppercase">
           {pageContent.title}
         </h1>
       </div>
-      <figure className="mb-5">
+      <figure className="my-4">
         <Image
           src={pageContent.image}
           alt={pageContent.title}

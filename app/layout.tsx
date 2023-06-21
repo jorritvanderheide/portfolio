@@ -2,6 +2,7 @@ import { FunctionComponent } from "react";
 import { Space_Grotesk, Sora, Open_Sans } from "next/font/google";
 import Header from "@/components/Header";
 import type RootLayoutProps from "@/types/RootLayoutProps";
+import "material-icons/iconfont/material-icons.css";
 import "@/styles/globals.css";
 
 const openSans = Open_Sans({
@@ -31,7 +32,7 @@ const RootLayout: FunctionComponent<RootLayoutProps> = ({ children }) => {
         className={`bg-white text-body ${openSans.variable} ${sora.variable} ${spaceGrotesk.variable}`}
       >
         <Header />
-        <main className="pt-header-mobile absolute w-screen md:pt-header">
+        <main className="absolute w-screen pt-header-mobile md:pt-header">
           {children}
         </main>
       </body>
