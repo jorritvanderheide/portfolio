@@ -1,5 +1,3 @@
-"use client";
-
 import Masonry from "react-masonry-css";
 import LearningActivitiesItem from "@/components/LearningActivitiesItem";
 import type LearningActivitiesItemProps from "@/types/LearningActivitiesItemProps";
