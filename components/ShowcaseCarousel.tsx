@@ -16,11 +16,11 @@ const getShowcaseItems = async () => {
 };
 
 const ShowcaseCarousel = async () => {
-  // const showcaseArray = await getShowcaseItems();
+  const showcaseArray = await getShowcaseItems();
 
   return (
     <div className="h-full w-full snap-y snap-mandatory overflow-y-scroll">
-      {/* {showcaseArray?.map((item: ShowcaseItemProps, index: number) => (
+      {showcaseArray?.map((item: ShowcaseItemProps, index: number) => (
         <ShowcaseItem
           key={index}
           image={item.image}
@@ -28,7 +28,7 @@ const ShowcaseCarousel = async () => {
           slug={item.slug}
           title={item.title}
         />
-      ))} */}
+      ))}
     </div>
   );
 };
