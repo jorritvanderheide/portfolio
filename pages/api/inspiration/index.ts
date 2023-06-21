@@ -17,7 +17,7 @@ export default async function handle(
       },
       sorts: [
         {
-          property: "Index",
+          property: "Date",
           direction: "descending",
         },
       ],
