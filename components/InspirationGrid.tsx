@@ -1,3 +1,5 @@
+"use client";
+
 import Masonry from "react-masonry-css";
 import InspirationItem from "@/components/InspirationItem";
 import type InspirationItemProps from "@/types/InspirationItemProps";
