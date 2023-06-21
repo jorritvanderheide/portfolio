@@ -8,9 +8,9 @@ export const content = [
 ];
 export const theme = {
   fontFamily: {
-    body: ["Open Sans", "sans-serif"],
-    display: ["Space Grotesk", "sans-serif"],
-    headings: ["Sora", "sans-serif"],
+    body: "var(--font-body)",
+    display: "var(--font-display)",
+    headings: "var(--font-headings)",
   },
   fontSize: {
     body: [
@@ -40,10 +40,5 @@ export const theme = {
     8: "8em",
     9: "9em",
     10: "10em",
-  },
-  extend: {
-    columns: {
-      masonry: "2",
-    },
   },
 };

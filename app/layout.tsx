@@ -6,7 +6,7 @@ import "@/styles/globals.css";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
-  variable: "--font-text",
+  variable: "--font-body",
 });
 
 const sora = Sora({
