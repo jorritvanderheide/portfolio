@@ -17,13 +17,13 @@ const getInspirationItems = async () => {
 };
 
 const InspirationPage = async () => {
-  const inspirationItems = await getInspirationItems();
+  // const inspirationItems = await getInspirationItems();
 
   return (
     <section className="mb-4">
       <Container>
         <div className="mt-2 flex w-full flex-col gap-2">
-          {inspirationItems?.map(
+          {/* {inspirationItems?.map(
             (inspirationItem: InspirationItemProps, index: number) => (
               <InspirationItem
                 key={index}
@@ -34,7 +34,7 @@ const InspirationPage = async () => {
                 url={inspirationItem.url}
               />
             )
-          )}
+          )} */}
         </div>
       </Container>
     </section>
