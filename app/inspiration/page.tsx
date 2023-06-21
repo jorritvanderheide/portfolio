@@ -1,3 +1,5 @@
+"use client";
+
 import InspirationGrid from "@/components/InspirationGrid";
 
 const InspirationPage = () => {
