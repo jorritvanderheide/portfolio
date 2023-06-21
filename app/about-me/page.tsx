@@ -9,6 +9,10 @@ const getPageContent = async () => {
     `${process.env.NEXT_PUBLIC_BASE_FETCH_URL}/api/about-me`
   );
 
+  if (!response.ok) {
+    throw new Error(`Server responded with status: ${response.status}`);
+  }
+
   const data = await response.json();
 
   return data;
