@@ -7,7 +7,7 @@ import type InspirationItemProps from "@/types/InspirationItemProps";
 const getInspirationItems = async () => {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_FETCH_URL}/api/inspiration`
-  ).then((res) => res.json());
+  );
 
   if (!response.ok) {
     throw new Error(`Server responded with status: ${response.status}`);
