@@ -6,7 +6,9 @@ const getShowcaseItems = async () => {
     `${process.env.NEXT_PUBLIC_BASE_FETCH_URL}/api/showcase`
   );
 
-  return response.json();
+  const data = await response.json();
+
+  return data;
 };
 
 const ShowcaseCarousel = async () => {

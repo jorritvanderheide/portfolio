@@ -7,9 +7,11 @@ import type InspirationItemProps from "@/types/InspirationItemProps";
 const getInspirationItems = async () => {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_FETCH_URL}/api/inspiration`
-  );
+  ).then((res) => res.json());
 
-  return response.json();
+  const data = await response.json();
+
+  return data;
 };
 
 const InspirationGrid = async () => {

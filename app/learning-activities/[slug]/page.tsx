@@ -24,11 +24,9 @@ const getLearningActivity = async (slug: string) => {
     `${process.env.NEXT_PUBLIC_BASE_FETCH_URL}/api/learning-activities/${slug}`
   );
 
-  if (!response.ok) {
-    throw new Error("Failed to fetch data");
-  }
+  const data = await response.json();
 
-  return response.json();
+  return data;
 };
 
 const LearningActivityPage = async ({

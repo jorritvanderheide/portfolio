@@ -9,7 +9,9 @@ const getPageContent = async () => {
     `${process.env.NEXT_PUBLIC_BASE_FETCH_URL}/api/about-me`
   );
 
-  return response.json();
+  const data = await response.json();
+
+  return data;
 };
 
 const AboutMe = async () => {

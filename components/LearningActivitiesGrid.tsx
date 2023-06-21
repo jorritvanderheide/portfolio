@@ -9,7 +9,9 @@ const getLearningActivitiesItems = async () => {
     `${process.env.NEXT_PUBLIC_BASE_FETCH_URL}/api/learning-activities`
   );
 
-  return response.json();
+  const data = await response.json();
+
+  return data;
 };
 
 const LearningActivitiesGrid = async () => {
