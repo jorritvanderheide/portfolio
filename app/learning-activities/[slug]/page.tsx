@@ -7,17 +7,17 @@ import AnimatedLink from "@/components/AnimatedLink";
 import type LearningActivityProps from "@/types/LearningActivityProps";
 import type LearningActivitiesItemProps from "@/types/LearningActivitiesItemProps";
 
-export const generateStaticParams = async () => {
-  const learningActivities = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_FETCH_URL}/api/learning-activities`
-  ).then((res) => res.json());
+// export const generateStaticParams = async () => {
+//   const learningActivities = await fetch(
+//     `${process.env.NEXT_PUBLIC_BASE_FETCH_URL}/api/learning-activities`
+//   ).then((res) => res.json());
 
-  return learningActivities.map(
-    (learningActivity: LearningActivitiesItemProps) => ({
-      slug: learningActivity.slug,
-    })
-  );
-};
+//   return learningActivities.map(
+//     (learningActivity: LearningActivitiesItemProps) => ({
+//       slug: learningActivity.slug,
+//     })
+//   );
+// };
 
 const getLearningActivity = async (slug: string) => {
   const response = await fetch(
