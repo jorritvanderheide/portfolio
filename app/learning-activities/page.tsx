@@ -4,7 +4,7 @@ const LearningActivitiesPage = () => {
   return (
     <section>
       {/* @ts-expect-error Async Server Component */}
-      <LearningActivitiesGrid />
+      {/* <LearningActivitiesGrid /> */}
     </section>
   );
 };

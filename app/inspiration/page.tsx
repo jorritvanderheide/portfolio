@@ -4,7 +4,7 @@ const InspirationPage = () => {
   return (
     <section>
       {/* @ts-expect-error Async Server Component */}
-      <InspirationGrid />
+      {/* <InspirationGrid /> */}
     </section>
   );
 };
