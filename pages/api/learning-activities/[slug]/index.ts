@@ -63,7 +63,6 @@ export default async function handle(
     const contentString: string = contentObject.parent;
 
     const learningActivity: LearningActivityProps = {
-      description: description,
       hasReport: hasReport,
       image: image,
       markdown: contentString,
