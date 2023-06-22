@@ -21,7 +21,7 @@ const getLearningActivitiesItems = async () => {
 const LearningActivitiesGrid = async () => {
   const breakpoints = {
     default: 3,
-    2560: 2,
+    1920: 2,
     500: 1,
   };
 
