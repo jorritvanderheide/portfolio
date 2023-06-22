@@ -22,9 +22,9 @@ const ShowcaseItem: FunctionComponent<ShowcaseItemProps> = ({
       </figure>
       <Link
         href={`/learning-activities/${slug}`}
-        className="absolute bottom-2 left-2 max-w-[calc(100vw_-_4em)] font-headings font-medium uppercase oldstyle-nums text-white mix-blend-difference"
+        className="absolute bottom-2 right-2 max-w-[calc(100vw_-_4em)] text-center font-headings text-body font-medium oldstyle-nums text-white mix-blend-difference md:text-right"
       >
-        <p className="text-headings">{title}</p>
+        {title}
       </Link>
     </article>
   );
