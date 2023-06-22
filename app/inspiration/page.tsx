@@ -22,14 +22,13 @@ const InspirationPage = async () => {
   return (
     <section className="mb-4">
       <Container>
-        <div className="mt-2 flex w-full flex-col gap-2">
+        <div className="mt-2 flex w-full flex-col gap-4">
           {inspirationItems?.map(
             (inspirationItem: InspirationItemProps, index: number) => (
               <InspirationItem
                 key={index}
                 description={inspirationItem.description}
                 image={inspirationItem.image}
-                slug={inspirationItem.slug}
                 title={inspirationItem.title}
                 url={inspirationItem.url}
               />
