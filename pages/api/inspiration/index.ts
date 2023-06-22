@@ -28,7 +28,6 @@ export default async function handle(
       inspirationItems.push({
         description: item.properties.Description.rich_text[0].plain_text,
         image: item.cover.external.url,
-        slug: item.properties.Slug.rich_text[0].plain_text,
         title: item.properties.Name.title[0].plain_text,
         url: item.properties.URL.url,
       });
