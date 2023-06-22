@@ -14,7 +14,7 @@ const InspirationItem: FunctionComponent<InspirationItemProps> = ({
     <article className="w-full">
       <Link href={url} rel="noreferrer noopener" target="_blank">
         <AnimatedLink className="flex flex-col items-center gap-2">
-          <figure className="relative aspect-[4/3] h-auto w-full bg-red-500">
+          <figure className="relative aspect-[4/3] h-auto w-full bg-[#d9d9d9]">
             <Image
               className="object-cover"
               src={image}
