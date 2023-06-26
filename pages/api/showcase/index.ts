@@ -2,6 +2,7 @@ import notion from "@/lib/notion/notion";
 import type { NextApiRequest, NextApiResponse } from "next";
 import type ShowcaseItemProps from "@/types/ShowcaseItemProps";
 
+// handles showcase requests
 export default async function handle(
   req: NextApiRequest,
   res: NextApiResponse

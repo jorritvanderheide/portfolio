@@ -1,3 +1,4 @@
+// showcase item props
 export default interface ShowcaseItemProps {
   image: string;
   priority?: boolean;

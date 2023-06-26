@@ -1,4 +1,5 @@
-export default interface PortfolioItemProps {
+// learning activities item props
+export default interface LearningActivitiesItemProps {
   image: string;
   isPortrait: boolean;
   key?: number;

@@ -1,18 +1,17 @@
 "use client";
 
-import { FunctionComponent, useState } from "react";
-import Image from "next/image";
+import { FunctionComponent } from "react";
 import Link from "next/link";
 import type InspirationItemProps from "@/types/InspirationItemProps";
-import AnimatedLink from "@/components/AnimatedLink";
 
+// inspiration item component
 const InspirationItem: FunctionComponent<InspirationItemProps> = ({
   description,
   title,
   url,
 }) => {
   return (
-    <article className="h-full w-full snap-center snap-always hover:cursor-pointer">
+    <article>
       <Link href={url} rel="noreferrer noopener" target="_blank">
         <div className="flex w-full flex-row items-center justify-between gap-4">
           <div className="flex flex-col gap-1">

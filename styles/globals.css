@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* tailwind base layer */
 @layer base {
   html {
     font-size: 62.5%;
@@ -15,15 +16,16 @@
   ::-webkit-scrollbar {
     display: none;
   }
+}
 
-  .masonry {
-    display: flex;
-    margin-left: -4em;
-    width: auto;
-  }
+/* masonry */
+.masonry {
+  display: flex;
+  margin-left: -4em;
+  width: auto;
+}
 
-  .masonry-col {
-    padding-left: 4em;
-    background-clip: padding-box;
-  }
+.masonry-col {
+  padding-left: 4em;
+  background-clip: padding-box;
 }

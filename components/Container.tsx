@@ -1,6 +1,7 @@
 import { FunctionComponent } from "react";
 import type ContainerProps from "@/types/ContainerProps";
 
+// container component
 const Container: FunctionComponent<ContainerProps> = ({
   children,
   className,

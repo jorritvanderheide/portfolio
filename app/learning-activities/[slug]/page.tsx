@@ -7,6 +7,7 @@ import AnimatedLink from "@/components/AnimatedLink";
 import type LearningActivityProps from "@/types/LearningActivityProps";
 import type LearningActivitiesItemProps from "@/types/LearningActivitiesItemProps";
 
+// generate static paths for learning activity pages
 export const generateStaticParams = async () => {
   const learningActivities = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_FETCH_URL}/api/learning-activities`
@@ -19,6 +20,7 @@ export const generateStaticParams = async () => {
   );
 };
 
+// fetch learning activity from api
 const getLearningActivity = async (slug: string) => {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_FETCH_URL}/api/learning-activities/${slug}`
@@ -33,6 +35,7 @@ const getLearningActivity = async (slug: string) => {
   return data;
 };
 
+// learning activity page
 const LearningActivityPage = async ({
   params,
 }: {

@@ -4,6 +4,7 @@ import { FunctionComponent } from "react";
 import { motion } from "framer-motion";
 import type AnimatedLinkProps from "@/types/AnimatedLinkProps";
 
+// animated link component
 const AnimatedLink: FunctionComponent<AnimatedLinkProps> = ({
   children,
   className,

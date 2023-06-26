@@ -6,6 +6,7 @@ import type LearningActivityProps from "@/types/LearningActivityProps";
 
 const n2m = new NotionToMarkdown({ notionClient: notion });
 
+// handles learning activity items requests
 export default async function handle(
   req: NextApiRequest,
   res: NextApiResponse

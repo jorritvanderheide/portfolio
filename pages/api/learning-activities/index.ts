@@ -2,6 +2,7 @@ import notion from "@/lib/notion/notion";
 import type { NextApiRequest, NextApiResponse } from "next";
 import type LearningActivitiesItemProps from "@/types/LearningActivitiesItemProps";
 
+// handles learning activities requests
 export default async function handle(
   req: NextApiRequest,
   res: NextApiResponse

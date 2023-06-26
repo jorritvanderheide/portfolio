@@ -6,6 +6,7 @@ import type PageContentProps from "@/types/PageContentProps";
 
 const n2m = new NotionToMarkdown({ notionClient: notion });
 
+// handles growth page requests
 export default async function handle(
   req: NextApiRequest,
   res: NextApiResponse

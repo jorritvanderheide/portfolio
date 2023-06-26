@@ -1,3 +1,4 @@
+// learning activity props
 export default interface LearningActivityProps {
   hasReport: boolean;
   image: string;

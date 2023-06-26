@@ -2,6 +2,7 @@ import notion from "@/lib/notion/notion";
 import type { NextApiRequest, NextApiResponse } from "next";
 import type InspirationItemProps from "@/types/InspirationItemProps";
 
+// handles inspiration item requests
 export default async function handle(
   req: NextApiRequest,
   res: NextApiResponse

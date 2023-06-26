@@ -1,3 +1,4 @@
+// page content props
 export default interface PageContentProps {
   description: string;
   image: string;

@@ -4,6 +4,7 @@ import Container from "@/components/Container";
 import { H1, H2, P, Figure } from "@/components/Blocks";
 import type PageContentProps from "@/types/PageContentProps";
 
+// fetch page content from api
 const getPageContent = async () => {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_FETCH_URL}/api/growth`
@@ -18,6 +19,7 @@ const getPageContent = async () => {
   return data;
 };
 
+// growth page
 const Growth = async () => {
   const pageContent: PageContentProps = await getPageContent();
 

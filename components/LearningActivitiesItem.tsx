@@ -1,9 +1,10 @@
 import { FunctionComponent } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import type LearningActivitiesItemProps from "@/types/LearningActivitiesItemProps";
 import AnimatedLink from "@/components/AnimatedLink";
+import type LearningActivitiesItemProps from "@/types/LearningActivitiesItemProps";
 
+// learning activities item component
 const LearningActivitiesItem: FunctionComponent<
   LearningActivitiesItemProps
 > = ({ image, isPortrait, key, slug, title }) => {

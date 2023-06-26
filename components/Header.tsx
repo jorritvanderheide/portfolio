@@ -22,6 +22,7 @@ const links = [
   },
 ];
 
+// header component
 const Header = () => {
   return (
     <header className="fixed top-0 z-10 h-header-mobile w-screen font-display text-display font-medium text-white mix-blend-difference md:h-header">

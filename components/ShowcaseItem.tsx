@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type ShowcaseItemProps from "@/types/ShowcaseItemProps";
 
+// showcase item component
 const ShowcaseItem: FunctionComponent<ShowcaseItemProps> = ({
   image,
   priority,
