@@ -6,36 +6,31 @@ import AnimatedLink from "@/components/AnimatedLink";
 
 const LearningActivitiesItem: FunctionComponent<
   LearningActivitiesItemProps
-> = ({ image, isPortrait, slug, title }) => {
+> = ({ image, isPortrait, key, slug, title }) => {
   return (
-    <AnimatedLink>
-      <article className="mb-4 w-full">
-        <Link href={`/learning-activities/${slug}`}>
+    <article className="mb-4 w-full">
+      <Link href={`/learning-activities/${slug}`}>
+        <AnimatedLink>
           <div className={`flex flex-col gap-1 ${isPortrait && "px-3"}`}>
-            <figure className="relative w-full">
-              {isPortrait ? (
-                <Image
-                  className="w-full object-cover"
-                  src={image}
-                  alt={title}
-                  width={720}
-                  height={1280}
-                />
-              ) : (
-                <Image
-                  className="w-full object-cover"
-                  src={image}
-                  alt={title}
-                  width={1280}
-                  height={720}
-                />
-              )}
+            <figure
+              className={`relative h-auto w-full ${
+                isPortrait ? "aspect-[3/4]" : "aspect-[4/3]"
+              }`}
+            >
+              <Image
+                className="object-cover"
+                src={image}
+                alt={title}
+                fill={true}
+                priority={key! <= 2 ? true : false}
+                sizes={`(min-width: 769px) 40vw, (min-width: 1921px) 25vw, 90vw)`}
+              />
             </figure>
             <p className="font-headings text-body uppercase">{title}</p>
           </div>
-        </Link>
-      </article>
-    </AnimatedLink>
+        </AnimatedLink>
+      </Link>
+    </article>
   );
 };
 

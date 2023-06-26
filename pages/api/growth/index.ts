@@ -17,12 +17,18 @@ export default async function handle(
 
     let description: string = "";
     let image: string = "";
+    let portrait: boolean = false;
     let title: string = "";
 
     if ("properties" in data) {
       if ("Description" in data.properties) {
         if ("rich_text" in data.properties.Description)
           description = data.properties.Description.rich_text[0].plain_text;
+      }
+      if ("Portrait" in data.properties) {
+        if ("checkbox" in data.properties.Portrait) {
+          portrait = data.properties.Portrait.checkbox;
+        }
       }
       if ("title" in data.properties.Name) {
         title = data.properties.Name.title[0].plain_text;
@@ -41,6 +47,7 @@ export default async function handle(
     const contentPage: PageContentProps = {
       description: description,
       image: image,
+      isPortrait: portrait,
       markdown: contentString,
       title: title,
     };

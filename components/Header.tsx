@@ -31,12 +31,14 @@ const Header = () => {
         </Link>
         <ul className="flex w-full justify-between gap-1 md:w-auto md:justify-normal">
           {links.map((link) => (
-            <Link key={link.slug} href={`/${link.slug}`}>
-              <AnimatedLink>
-                {link.name}
-                <span className="hidden md:inline">{link.longName}</span>
-              </AnimatedLink>
-            </Link>
+            <li key={link.slug}>
+              <Link href={`/${link.slug}`}>
+                <AnimatedLink>
+                  {link.name}
+                  <span className="hidden md:inline">{link.longName}</span>
+                </AnimatedLink>
+              </Link>
+            </li>
           ))}
         </ul>
       </nav>

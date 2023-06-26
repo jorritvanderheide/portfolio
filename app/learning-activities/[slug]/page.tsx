@@ -50,13 +50,17 @@ const LearningActivityPage = async ({
           {learningActivity.title}
         </h1>
       </div>
-      <figure className="my-4">
+      <figure
+        className={`relative my-4 h-auto w-full ${
+          learningActivity.isPortrait ? "aspect-[3/4]" : "aspect-[4/3]"
+        }`}
+      >
         <Image
           src={learningActivity.image}
           alt={learningActivity.title}
-          width={3840}
-          height={2160}
+          fill={true}
           priority={true}
+          sizes={`(min-width: 768px) 90vw, 100vw)`}
         />
       </figure>
       <Container>

@@ -1,4 +1,3 @@
-import Container from "@/components/Container";
 import InspirationItem from "@/components/InspirationItem";
 import InspirationItemProps from "@/types/InspirationItemProps";
 
@@ -20,22 +19,17 @@ const InspirationPage = async () => {
   const inspirationItems = await getInspirationItems();
 
   return (
-    <section className="mb-4">
-      <Container>
-        <div className="mt-2 flex w-full flex-col gap-4">
-          {inspirationItems?.map(
-            (inspirationItem: InspirationItemProps, index: number) => (
-              <InspirationItem
-                key={index}
-                description={inspirationItem.description}
-                image={inspirationItem.image}
-                title={inspirationItem.title}
-                url={inspirationItem.url}
-              />
-            )
-          )}
-        </div>
-      </Container>
+    <section className="mx-auto h-[100svh] w-screen max-w-[80%] snap-y snap-mandatory justify-center overflow-y-scroll pt-[calc(50vh_-_7.5em)] md:pt-[calc(50vh_-_5em)]">
+      {inspirationItems?.map(
+        (inspirationItem: InspirationItemProps, index: number) => (
+          <InspirationItem
+            key={index}
+            description={inspirationItem.description}
+            title={inspirationItem.title}
+            url={inspirationItem.url}
+          />
+        )
+      )}
     </section>
   );
 };

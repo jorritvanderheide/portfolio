@@ -22,7 +22,7 @@ const LearningActivitiesGrid = async () => {
   const breakpoints = {
     default: 3,
     1920: 2,
-    500: 1,
+    768: 1,
   };
 
   const learningActivitiesItems = await getLearningActivitiesItems();

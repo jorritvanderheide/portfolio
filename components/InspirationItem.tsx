@@ -1,4 +1,6 @@
-import { FunctionComponent } from "react";
+"use client";
+
+import { FunctionComponent, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type InspirationItemProps from "@/types/InspirationItemProps";
@@ -6,30 +8,19 @@ import AnimatedLink from "@/components/AnimatedLink";
 
 const InspirationItem: FunctionComponent<InspirationItemProps> = ({
   description,
-  image,
   title,
   url,
 }) => {
   return (
-    <article className="w-full">
+    <article className="h-full w-full snap-center snap-always hover:cursor-pointer">
       <Link href={url} rel="noreferrer noopener" target="_blank">
-        <AnimatedLink className="flex flex-col items-center gap-2">
-          <figure className="relative aspect-[4/3] h-auto w-full bg-[#d9d9d9]">
-            <Image
-              className="object-cover"
-              src={image}
-              alt={title}
-              fill={true}
-            />
-          </figure>
+        <div className="flex w-full flex-row items-center justify-between gap-4">
           <div className="flex flex-col gap-1">
-            <div className="flex items-center justify-between">
-              <p className="font-headings text-body uppercase">{title}</p>
-              <span className="material-icons !text-body">call_made</span>
-            </div>
+            <p className="font-headings text-body uppercase">{title}</p>
             <p className="font-headings text-body">{description}</p>
           </div>
-        </AnimatedLink>
+          <span className="material-icons !text-body">call_made</span>
+        </div>
       </Link>
     </article>
   );
