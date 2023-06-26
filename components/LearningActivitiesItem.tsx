@@ -10,7 +10,7 @@ const LearningActivitiesItem: FunctionComponent<
 > = ({ image, isPortrait, key, slug, title }) => {
   return (
     <article className="mb-4 w-full">
-      <Link href={`/learning-activities/${slug}`}>
+      <Link href={`/learning-activities/${slug}`} passHref>
         <AnimatedLink>
           <div className={`flex flex-col gap-1 ${isPortrait && "px-3"}`}>
             <figure

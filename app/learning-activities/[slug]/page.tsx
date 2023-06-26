@@ -88,6 +88,7 @@ const LearningActivityPage = async ({
               className="flex items-center font-headings text-display uppercase"
               href={`/files/${slug}.pdf`}
               target="_blank"
+              passHref
             >
               <AnimatedLink>Read the full report</AnimatedLink>
             </Link>

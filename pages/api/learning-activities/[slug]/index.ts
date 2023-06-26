@@ -36,6 +36,7 @@ export default async function handle(
     const metadata = data.results[0];
 
     let description: string = "";
+    let isPortrait: boolean = false;
     let hasReport: boolean = false;
     let image: string = "";
     let title: string = "";
@@ -45,9 +46,13 @@ export default async function handle(
         if ("rich_text" in metadata.properties.Description)
           description = metadata.properties.Description.rich_text[0].plain_text;
       }
-      if ("HasReport" in metadata.properties) {
-        if ("checkbox" in metadata.properties.HasReport)
-          hasReport = metadata.properties.HasReport.checkbox;
+      if ("Portrait" in metadata.properties) {
+        if ("checkbox" in metadata.properties.Portrait)
+          isPortrait = metadata.properties.Portrait.checkbox;
+      }
+      if ("Report" in metadata.properties) {
+        if ("checkbox" in metadata.properties.Report)
+          hasReport = metadata.properties.Report.checkbox;
       }
       if ("title" in metadata.properties.Name) {
         title = metadata.properties.Name.title[0].plain_text;
@@ -66,6 +71,7 @@ export default async function handle(
     const learningActivity: LearningActivityProps = {
       hasReport: hasReport,
       image: image,
+      isPortrait: isPortrait,
       markdown: contentString,
       title: title,
     };
