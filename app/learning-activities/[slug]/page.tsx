@@ -47,7 +47,7 @@ const LearningActivityPage = async ({
   );
 
   return (
-    <section className="mx-auto mb-4 mt-2 px-0 md:px-4">
+    <section className="mx-auto mb-4 mt-2 px-0 md:max-w-[133vh] md:px-4">
       <div className="mx-2 flex items-end md:mx-0 md:-mt-header md:min-h-[75svh]">
         <h1 className="font-headings text-headings font-medium uppercase">
           {learningActivity.title}

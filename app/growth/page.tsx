@@ -24,7 +24,7 @@ const Growth = async () => {
   const pageContent: PageContentProps = await getPageContent();
 
   return (
-    <section className="mx-auto mb-4 mt-2 px-0 md:px-4">
+    <section className="mx-auto mb-4 mt-2 px-0 md:max-w-[133vh] md:px-4">
       <div className="mx-2 flex items-end md:mx-0 md:-mt-header md:min-h-[75svh]">
         <h1 className="font-headings text-headings font-medium uppercase">
           {pageContent.title}
@@ -54,7 +54,12 @@ const Growth = async () => {
             img: ({ node, ...props }) => (
               <Figure>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img alt="image" width={3840} height={2160} {...props} />
+                <img
+                  alt="image"
+                  width={3840}
+                  height={2160}
+                  {...props}
+                />
               </Figure>
             ),
             a: ({ node, ...props }) => <A {...props} />,

@@ -21,7 +21,7 @@ const InspirationPage = async () => {
   const inspirationItems = await getInspirationItems();
 
   return (
-    <section className="mx-auto mb-4 mt-2 flex max-w-[80%] flex-col gap-4">
+    <section className="mx-auto mb-4 mt-2 flex flex-col gap-4 md:max-w-[133vh]">
       {inspirationItems?.map(
         (inspirationItem: InspirationItemProps, index: number) => (
           <InspirationItem
