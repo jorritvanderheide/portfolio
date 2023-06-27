@@ -6,7 +6,7 @@
 @layer base {
   html {
     font-size: 62.5%;
-    @apply dark:bg-gray-900 dark:text-white;
+    @apply dark:bg-gray-900 dark:text-gray-50;
   }
 
   body {

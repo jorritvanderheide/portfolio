@@ -30,31 +30,11 @@ const LearningActivitiesItem: FunctionComponent<
                 src={image}
                 alt={title}
                 fill={true}
-                priority={index! <= 2 ? true : false}
+                priority={index! <= 5 ? true : false}
                 sizes={`(min-width: 769px) 40vw, (min-width: 1921px) 25vw, 90vw)`}
-                onLoad={() => setLoading(false)}
               />
-              <div
-                className={`absolute z-10 h-full w-full ${
-                  loading ? "bg-white" : "hidden"
-                }`}
-              >
-                <div
-                  className={`h-full w-full ${
-                    loading && "animate-pulse bg-[#d9d9d9]"
-                  }`}
-                ></div>
-              </div>
             </figure>
-
-            <p
-              className={`font-headings text-body uppercase ${
-                loading &&
-                "animate-pulse line-through decoration-[#d9d9d9] decoration-[1.25em]"
-              }`}
-            >
-              {title}
-            </p>
+            <p className={`font-headings text-body uppercase`}>{title}</p>
           </div>
         </AnimatedLink>
       </Link>
