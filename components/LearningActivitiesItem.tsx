@@ -30,7 +30,7 @@ const LearningActivitiesItem: FunctionComponent<
                 src={image}
                 alt={title}
                 fill={true}
-                priority={index <= 2 ? true : false}
+                priority={index! <= 2 ? true : false}
                 sizes={`(min-width: 769px) 40vw, (min-width: 1921px) 25vw, 90vw)`}
                 onLoad={() => setLoading(false)}
               />
