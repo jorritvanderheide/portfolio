@@ -48,7 +48,7 @@ const LearningActivitiesItem: FunctionComponent<
             </figure>
 
             <p
-              className={`${
+              className={`font-headings text-body uppercase ${
                 loading &&
                 "animate-pulse line-through decoration-[#d9d9d9] decoration-[1.25em]"
               }`}
