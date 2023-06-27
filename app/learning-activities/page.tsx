@@ -45,6 +45,7 @@ const LearningActivitiesPage = async () => {
               <LearningActivitiesItem
                 key={index}
                 image={learningActivitiesItem.image}
+                index={index}
                 isPortrait={learningActivitiesItem.isPortrait}
                 slug={learningActivitiesItem.slug}
                 title={learningActivitiesItem.title}

@@ -29,3 +29,13 @@
   padding-left: 4em;
   background-clip: padding-box;
 }
+
+/* other elements */
+.custom-link {
+  background-size: auto 175%;
+  transition: background 0.3s ease-in-out;
+}
+
+.custom-link:hover {
+  background-position-y: 100%;
+}

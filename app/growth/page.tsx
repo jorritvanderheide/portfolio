@@ -1,7 +1,7 @@
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import Container from "@/components/Container";
-import { H1, H2, P, Figure } from "@/components/Blocks";
+import { H1, H2, P, Figure, A } from "@/components/Blocks";
 import type PageContentProps from "@/types/PageContentProps";
 
 // fetch page content from api
@@ -57,6 +57,7 @@ const Growth = async () => {
                 <img alt="image" width={3840} height={2160} {...props} />
               </Figure>
             ),
+            a: ({ node, ...props }) => <A {...props} />,
           }}
         />
       </Container>

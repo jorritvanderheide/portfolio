@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import Container from "@/components/Container";
-import { H1, H2, P, Figure } from "@/components/Blocks";
+import { H1, H2, P, Figure, A } from "@/components/Blocks";
 import AnimatedLink from "@/components/AnimatedLink";
 import type LearningActivityProps from "@/types/LearningActivityProps";
 import type LearningActivitiesItemProps from "@/types/LearningActivitiesItemProps";
@@ -74,12 +74,8 @@ const LearningActivityPage = async ({
             h1: ({ node, ...props }) => <H1 {...props} />,
             h2: ({ node, ...props }) => <H2 {...props} />,
             p: ({ node, ...props }) => <P {...props} />,
-            img: ({ node, ...props }) => (
-              <Figure>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img alt="image" width={3840} height={2160} {...props} />
-              </Figure>
-            ),
+            img: ({ node, ...props }) => <Figure {...props} />,
+            a: ({ node, ...props }) => <A {...props} />,
           }}
         />
         {learningActivity.hasReport && (

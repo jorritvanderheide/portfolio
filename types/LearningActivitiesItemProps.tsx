@@ -1,8 +1,8 @@
 // learning activities item props
 export default interface LearningActivitiesItemProps {
   image: string;
+  index: number;
   isPortrait: boolean;
-  key?: number;
   slug: string;
   title: string;
 }

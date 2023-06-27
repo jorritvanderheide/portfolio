@@ -5,12 +5,13 @@
 export const content = [
   "./app/**/*.{js,ts,jsx,tsx,mdx}",
   "./components/**/*.{js,ts,jsx,tsx}",
+  "!./node_modules",
 ];
 export const theme = {
   fontFamily: {
-    body: "var(--font-body)",
-    display: "var(--font-display)",
-    headings: "var(--font-headings)",
+    body: ["var(--font-body)"],
+    display: ["var(--font-display)"],
+    headings: ["var(--font-headings)"],
   },
   fontSize: {
     body: [

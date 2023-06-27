@@ -1,4 +1,5 @@
 import { FunctionComponent } from "react";
+import Link from "next/link";
 import type BlockProps from "@/types/BlockProps";
 
 // h1 block component
@@ -41,5 +42,26 @@ export const Figure: FunctionComponent<BlockProps> = ({
     >
       {children}
     </figure>
+  );
+};
+
+// link block component
+export const A: FunctionComponent<BlockProps> = ({
+  children,
+  className,
+  href,
+}) => {
+  const linkElements: string[] = href.split("/");
+  const link: string =
+    "/learning-activities/" + linkElements[linkElements.length - 1];
+
+  return (
+    <Link
+      className={`custom-link bg-gradient-to-b from-[white_50%] to-[#d9d9d9_50%] ${className}`}
+      href={link}
+      target="_blank"
+    >
+      {children}
+    </Link>
   );
 };
