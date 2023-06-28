@@ -1,5 +1,3 @@
-"use client";
-
 import Masonry from "react-masonry-css";
 import LearningActivitiesItem from "@/components/LearningActivitiesItem";
 import type LearningActivitiesItemProps from "@/types/LearningActivitiesItemProps";
@@ -32,27 +30,27 @@ const LearningActivitiesPage = async () => {
   return (
     <section>
       <div className="mx-auto mt-2 max-w-[80%]">
-        <Masonry
+        {/* <Masonry
           breakpointCols={breakpoints}
           className="masonry"
           columnClassName="masonry-col"
-        >
-          {learningActivitiesItems?.map(
-            (
-              learningActivitiesItem: LearningActivitiesItemProps,
-              index: number
-            ) => (
-              <LearningActivitiesItem
-                key={index}
-                image={learningActivitiesItem.image}
-                index={index}
-                isPortrait={learningActivitiesItem.isPortrait}
-                slug={learningActivitiesItem.slug}
-                title={learningActivitiesItem.title}
-              />
-            )
-          )}
-        </Masonry>
+        > */}
+        {learningActivitiesItems?.map(
+          (
+            learningActivitiesItem: LearningActivitiesItemProps,
+            index: number
+          ) => (
+            <LearningActivitiesItem
+              key={index}
+              image={learningActivitiesItem.image}
+              index={index}
+              isPortrait={learningActivitiesItem.isPortrait}
+              slug={learningActivitiesItem.slug}
+              title={learningActivitiesItem.title}
+            />
+          )
+        )}
+        {/* </Masonry> */}
       </div>
     </section>
   );

@@ -1,5 +1,3 @@
-"use client";
-
 import { FunctionComponent } from "react";
 import Link from "next/link";
 import type InspirationItemProps from "@/types/InspirationItemProps";
@@ -12,7 +10,12 @@ const InspirationItem: FunctionComponent<InspirationItemProps> = ({
 }) => {
   return (
     <article>
-      <Link href={url} rel="noreferrer noopener" target="_blank" passHref>
+      <Link
+        href={url}
+        rel="noreferrer noopener"
+        target="_blank"
+        passHref
+      >
         <div className="flex w-full flex-row items-center justify-between gap-2 md:gap-4">
           <div className="flex flex-col gap-1">
             <p className="font-headings text-body uppercase">{title}</p>
