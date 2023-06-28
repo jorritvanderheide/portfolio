@@ -26,6 +26,10 @@ export const theme = {
       "clamp(2rem, 0.5714285714285716rem + 7.142857142857142vw, 12rem)",
       1.25,
     ],
+    subheadings: [
+      "clamp(2rem, 1.4285714285714286rem + 2.857142857142857vw, 6rem);",
+      1.25,
+    ],
   },
   spacing: {
     header: "5em",

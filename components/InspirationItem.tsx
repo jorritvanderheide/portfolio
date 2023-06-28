@@ -18,7 +18,9 @@ const InspirationItem: FunctionComponent<InspirationItemProps> = ({
       >
         <div className="flex w-full flex-row items-center justify-between gap-2 md:gap-4">
           <div className="flex flex-col gap-1">
-            <p className="font-headings text-body uppercase">{title}</p>
+            <p className="font-headings text-subheadings font-semibold uppercase">
+              {title}
+            </p>
             <p className="font-headings text-body">{description}</p>
           </div>
           <span className="material-icons !text-body">call_made</span>

@@ -5,7 +5,7 @@ const Loading = () => {
         <article>
           <div className="flex w-full flex-row items-center justify-between gap-2 md:gap-4">
             <div className="flex flex-col gap-1">
-              <p className="font-headings text-body uppercase line-through decoration-gray-200 decoration-[1.25em] dark:decoration-gray-800">
+              <p className="font-headings text-subheadings uppercase line-through decoration-gray-200 decoration-[1.25em] dark:decoration-gray-800">
                 low-tech magazine
               </p>
               <p className="font-headings text-body line-through decoration-gray-200 decoration-[1.25em] dark:decoration-gray-800">
@@ -19,7 +19,7 @@ const Loading = () => {
         <article>
           <div className="flex w-full flex-row items-center justify-between gap-2 md:gap-4">
             <div className="flex flex-col gap-1">
-              <p className="font-headings text-body uppercase line-through decoration-gray-200 decoration-[1.25em] dark:decoration-gray-800">
+              <p className="font-headings text-subheadings uppercase line-through decoration-gray-200 decoration-[1.25em] dark:decoration-gray-800">
                 low-tech magazine
               </p>
               <p className="font-headings text-body line-through decoration-gray-200 decoration-[1.25em] dark:decoration-gray-800">
@@ -33,7 +33,7 @@ const Loading = () => {
         <article>
           <div className="flex w-full flex-row items-center justify-between gap-2 md:gap-4">
             <div className="flex flex-col gap-1">
-              <p className="font-headings text-body uppercase line-through decoration-gray-200 decoration-[1.25em] dark:decoration-gray-800">
+              <p className="font-headings text-subheadings uppercase line-through decoration-gray-200 decoration-[1.25em] dark:decoration-gray-800">
                 low-tech magazine
               </p>
               <p className="font-headings text-body line-through decoration-gray-200 decoration-[1.25em] dark:decoration-gray-800">
@@ -47,7 +47,7 @@ const Loading = () => {
         <article>
           <div className="flex w-full flex-row items-center justify-between gap-2 md:gap-4">
             <div className="flex flex-col gap-1">
-              <p className="font-headings text-body uppercase line-through decoration-gray-200 decoration-[1.25em] dark:decoration-gray-800">
+              <p className="font-headings text-subheadings uppercase line-through decoration-gray-200 decoration-[1.25em] dark:decoration-gray-800">
                 low-tech magazine
               </p>
               <p className="font-headings text-body line-through decoration-gray-200 decoration-[1.25em] dark:decoration-gray-800">

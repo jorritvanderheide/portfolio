@@ -1,12 +1,5 @@
-import Masonry from "react-masonry-css";
 import LearningActivitiesItem from "@/components/LearningActivitiesItem";
 import type LearningActivitiesItemProps from "@/types/LearningActivitiesItemProps";
-
-const breakpoints = {
-  default: 3,
-  1920: 2,
-  768: 1,
-};
 
 // fetch learning activities items from api
 const getLearningActivitiesItems = async () => {
@@ -30,7 +23,7 @@ const LearningActivitiesPage = async () => {
   return (
     <section>
       <div className="mx-auto mt-2 max-w-[80%]">
-        <div className="grid grid-cols-1 items-center justify-center gap-4 md:grid-cols-2 3xl:grid-cols-3">
+        <div className="grid grid-cols-1 justify-center gap-4 md:grid-cols-3 3xl:grid-cols-4">
           {learningActivitiesItems?.map(
             (
               learningActivitiesItem: LearningActivitiesItemProps,
