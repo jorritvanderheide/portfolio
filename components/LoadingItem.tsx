@@ -7,7 +7,7 @@ const LoadingItem: FunctionComponent<LoadingItemProps> = ({
   title,
 }) => {
   return (
-    <article className="mb-4 w-full animate-pulse">
+    <article className="mb-4 w-full">
       <div className={`flex flex-col gap-1 ${isPortrait && "px-3"}`}>
         <figure
           className={`relative h-auto w-full bg-gray-200 dark:bg-gray-800 ${
@@ -15,7 +15,7 @@ const LoadingItem: FunctionComponent<LoadingItemProps> = ({
           }`}
         ></figure>
         <p
-          className={`font-headings text-body uppercase ${`line-through decoration-gray-200 decoration-[1.25em] dark:decoration-gray-800`}`}
+          className={`font-headings text-body uppercase line-through decoration-gray-200 decoration-[1.25em] dark:decoration-gray-800`}
         >
           {title}
         </p>

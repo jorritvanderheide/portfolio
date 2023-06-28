@@ -1,9 +1,8 @@
 "use client";
 
-import { Suspense } from "react";
 import Masonry from "react-masonry-css";
-import LearningActivitiesGrid from "@/components/LearningActivitiesGrid";
-import LoadingItem from "@/components/LoadingItem";
+import LearningActivitiesItem from "@/components/LearningActivitiesItem";
+import type LearningActivitiesItemProps from "@/types/LearningActivitiesItemProps";
 
 const breakpoints = {
   default: 3,
@@ -11,54 +10,52 @@ const breakpoints = {
   768: 1,
 };
 
+// fetch learning activities items from api
+const getLearningActivitiesItems = async () => {
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_FETCH_URL}/api/learning-activities`
+  );
+
+  if (!response.ok) {
+    throw new Error(`Server responded with status: ${response.status}`);
+  }
+
+  const data = await response.json();
+
+  return data;
+};
+
 // learning activities page
 const LearningActivitiesPage = async () => {
+  const learningActivitiesItems = await getLearningActivitiesItems();
+
   return (
     <section>
       <div className="mx-auto mt-2 max-w-[80%]">
-        <Suspense fallback={<LoadingGrid />}>
-          {/* @ts-expect-error Server Component */}
-          <LearningActivitiesGrid />
-        </Suspense>
+        <Masonry
+          breakpointCols={breakpoints}
+          className="masonry"
+          columnClassName="masonry-col"
+        >
+          {learningActivitiesItems?.map(
+            (
+              learningActivitiesItem: LearningActivitiesItemProps,
+              index: number
+            ) => (
+              <LearningActivitiesItem
+                key={index}
+                image={learningActivitiesItem.image}
+                index={index}
+                isPortrait={learningActivitiesItem.isPortrait}
+                slug={learningActivitiesItem.slug}
+                title={learningActivitiesItem.title}
+              />
+            )
+          )}
+        </Masonry>
       </div>
     </section>
   );
 };
 
 export default LearningActivitiesPage;
-
-// loading page for learning activities
-const LoadingGrid = () => {
-  return (
-    <Masonry
-      breakpointCols={breakpoints}
-      className="masonry"
-      columnClassName="masonry-col"
-    >
-      <LoadingItem
-        isPortrait={false}
-        title={"Final Master Project 2 - Envisioning Eindhoven"}
-      />
-      <LoadingItem
-        isPortrait={true}
-        title={"Final Master Project 1 - Rhizome"}
-      />
-      <LoadingItem
-        isPortrait={false}
-        title={"M2.1 project design - Repo*duction"}
-      />
-      <LoadingItem
-        isPortrait={false}
-        title={"Polar Bearings"}
-      />
-      <LoadingItem
-        isPortrait={false}
-        title={"A designerly perspective on IoT"}
-      />
-      <LoadingItem
-        isPortrait={true}
-        title={"Designing with Advanced Artificial Intelligence"}
-      />
-    </Masonry>
-  );
-};
