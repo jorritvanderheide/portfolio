@@ -51,15 +51,20 @@ export const A: FunctionComponent<BlockProps> = ({
   className,
   href,
 }) => {
-  const linkElements: string[] = href.split("/");
-  const link: string =
-    "/learning-activities/" + linkElements[linkElements.length - 1];
+  let link: string = "";
+  const isInternal: boolean = href.includes("jorritvanderheide");
+
+  if (isInternal) {
+    const linkElements: string[] = href.split("/");
+    link = "/learning-activities/" + linkElements[linkElements.length - 1];
+  }
 
   return (
     <Link
       className={`custom-link bg-gradient-to-b from-[#fafafa_50%] to-[#d4d4d8_50%] dark:from-[#18181B_50%] dark:to-[#3f3f46_50%] ${className}`}
-      href={link}
+      href={isInternal ? link : href}
       target="_blank"
+      rel="noopener noreferrer"
     >
       {children}
     </Link>
