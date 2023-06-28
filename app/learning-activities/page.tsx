@@ -30,27 +30,23 @@ const LearningActivitiesPage = async () => {
   return (
     <section>
       <div className="mx-auto mt-2 max-w-[80%]">
-        {/* <Masonry
-          breakpointCols={breakpoints}
-          className="masonry"
-          columnClassName="masonry-col"
-        > */}
-        {learningActivitiesItems?.map(
-          (
-            learningActivitiesItem: LearningActivitiesItemProps,
-            index: number
-          ) => (
-            <LearningActivitiesItem
-              key={index}
-              image={learningActivitiesItem.image}
-              index={index}
-              isPortrait={learningActivitiesItem.isPortrait}
-              slug={learningActivitiesItem.slug}
-              title={learningActivitiesItem.title}
-            />
-          )
-        )}
-        {/* </Masonry> */}
+        <div className="grid grid-cols-1 items-center justify-center gap-4 md:grid-cols-2 3xl:grid-cols-3">
+          {learningActivitiesItems?.map(
+            (
+              learningActivitiesItem: LearningActivitiesItemProps,
+              index: number
+            ) => (
+              <LearningActivitiesItem
+                key={index}
+                image={learningActivitiesItem.image}
+                index={index}
+                isPortrait={learningActivitiesItem.isPortrait}
+                slug={learningActivitiesItem.slug}
+                title={learningActivitiesItem.title}
+              />
+            )
+          )}
+        </div>
       </div>
     </section>
   );

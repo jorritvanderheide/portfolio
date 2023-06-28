@@ -18,18 +18,6 @@
   }
 }
 
-/* masonry */
-.masonry {
-  display: flex;
-  margin-left: -4em;
-  width: auto;
-}
-
-.masonry-col {
-  padding-left: 4em;
-  background-clip: padding-box;
-}
-
 /* other elements */
 .custom-link {
   background-size: auto 175%;

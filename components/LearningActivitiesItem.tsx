@@ -9,7 +9,7 @@ const LearningActivitiesItem: FunctionComponent<
   LearningActivitiesItemProps
 > = ({ image, isPortrait, index, slug, title }) => {
   return (
-    <article className="mb-4 w-full">
+    <article className="w-full">
       <Link
         href={`/learning-activities/${slug}`}
         passHref

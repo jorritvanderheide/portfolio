@@ -43,4 +43,9 @@ export const theme = {
     9: "9em",
     10: "10em",
   },
+  extend: {
+    screens: {
+      "3xl": "1921px",
+    },
+  },
 };
