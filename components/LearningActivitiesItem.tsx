@@ -1,6 +1,4 @@
-"use client";
-
-import { FunctionComponent, useState } from "react";
+import { FunctionComponent } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import AnimatedLink from "@/components/AnimatedLink";
@@ -10,8 +8,6 @@ import type LearningActivitiesItemProps from "@/types/LearningActivitiesItemProp
 const LearningActivitiesItem: FunctionComponent<
   LearningActivitiesItemProps
 > = ({ image, isPortrait, index, slug, title }) => {
-  const [loading, setLoading] = useState(true);
-
   return (
     <article className="mb-4 w-full">
       <Link
