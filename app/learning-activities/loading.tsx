@@ -1,16 +1,9 @@
-import Masonry from "react-masonry-css";
 import LoadingItem from "@/components/LoadingItem";
-
-const breakpoints = {
-  default: 3,
-  1920: 2,
-  768: 1,
-};
 
 const Loading = () => {
   return (
     <section>
-      <div className="mx-auto mt-2 max-w-[80%] animate-pulse select-none">
+      <div className="mx-auto mb-4 mt-2 max-w-[80%] animate-pulse select-none">
         <div className="grid grid-cols-1 items-center justify-center gap-4 md:grid-cols-2 3xl:grid-cols-3">
           <LoadingItem
             isPortrait={false}

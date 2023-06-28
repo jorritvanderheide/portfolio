@@ -15,10 +15,14 @@ const LearningActivitiesItem: FunctionComponent<
         passHref
       >
         <AnimatedLink>
-          <div className={`flex flex-col gap-1`}>
-            <figure className={`relative aspect-square h-auto w-full `}>
+          <div className={`flex flex-col gap-1 ${isPortrait && "px-3"}`}>
+            <figure
+              className={`relative h-auto w-full ${
+                isPortrait ? "aspect-[3/4]" : "aspect-[4/3]"
+              }`}
+            >
               <Image
-                className="object-fit rounded-xl"
+                className="object-covers rounded-xl"
                 src={image}
                 alt={title}
                 fill={true}
@@ -26,7 +30,7 @@ const LearningActivitiesItem: FunctionComponent<
                 sizes={`(min-width: 769px) 40vw, (min-width: 1921px) 25vw, 90vw)`}
               />
             </figure>
-            <p className={`text-[0.9em] font-headings uppercase`}>{title}</p>
+            <p className={`font-headings text-body uppercase`}>{title}</p>
           </div>
         </AnimatedLink>
       </Link>

@@ -36,6 +36,7 @@ const Growth = async () => {
         }`}
       >
         <Image
+          className="rounded-xl object-cover"
           src={pageContent.image}
           alt={pageContent.title}
           fill={true}

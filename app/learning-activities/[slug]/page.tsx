@@ -59,6 +59,7 @@ const LearningActivityPage = async ({
         }`}
       >
         <Image
+          className="rounded-xl object-cover"
           src={learningActivity.image}
           alt={learningActivity.title}
           fill={true}
