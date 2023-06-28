@@ -12,10 +12,6 @@
   body {
     font-size: 1.6rem;
   }
-
-  ::-webkit-scrollbar {
-    display: none;
-  }
 }
 
 /* other elements */
