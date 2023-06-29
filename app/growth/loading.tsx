@@ -7,7 +7,7 @@ const Loading = () => {
         </h1>
       </div>
       <figure
-        className={`relative my-4 aspect-[4/3] h-auto w-full rounded-xl bg-gray-200 dark:bg-gray-800`}
+        className={`relative my-4 aspect-[4/3] h-auto w-full bg-gray-200 dark:bg-gray-800 md:rounded-xl`}
       ></figure>
     </section>
   );

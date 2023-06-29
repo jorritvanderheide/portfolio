@@ -6,20 +6,41 @@
 @layer base {
   html {
     font-size: 62.5%;
-    @apply dark:bg-gray-900 dark:text-gray-50;
+    font-kerning: normal;
+    font-smooth: always;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    @apply bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-50;
   }
 
   body {
     font-size: 1.6rem;
   }
-}
 
-/* other elements */
-.custom-link {
-  background-size: auto 175%;
-  transition: background 0.3s ease-in-out;
-}
+  img {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
 
-.custom-link:hover {
-  background-position-y: 100%;
+  ::selection {
+    @apply bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* other elements */
+  .custom-link {
+    background-size: auto 175%;
+    transition: background 0.3s ease-in-out;
+  }
+
+  .custom-link:hover {
+    background-position-y: 100%;
+  }
 }

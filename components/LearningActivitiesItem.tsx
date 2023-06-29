@@ -30,7 +30,9 @@ const LearningActivitiesItem: FunctionComponent<
                 sizes={`(min-width: 769px) 40vw, (min-width: 1921px) 25vw, 90vw)`}
               />
             </figure>
-            <p className={`font-headings text-body uppercase`}>{title}</p>
+            <p className="select-none font-headings text-body uppercase">
+              {title}
+            </p>
           </div>
         </AnimatedLink>
       </Link>

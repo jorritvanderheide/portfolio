@@ -49,7 +49,7 @@ const LearningActivityPage = async ({
   return (
     <section className="mx-auto mb-4 mt-2 px-0 md:max-w-[133vh] md:px-4">
       <div className="mx-2 flex items-end md:mx-0 md:-mt-header md:min-h-[75svh]">
-        <h1 className="font-headings text-headings font-medium uppercase">
+        <h1 className="font-headings text-headings font-medium uppercase select-none">
           {learningActivity.title}
         </h1>
       </div>
@@ -59,7 +59,7 @@ const LearningActivityPage = async ({
         }`}
       >
         <Image
-          className="rounded-xl object-cover"
+          className="object-cover md:rounded-xl"
           src={learningActivity.image}
           alt={learningActivity.title}
           fill={true}
@@ -80,9 +80,9 @@ const LearningActivityPage = async ({
           }}
         />
         {learningActivity.hasReport && (
-          <div className="mt-2 w-full">
+          <div className="mt-2 w-full select-none">
             <Link
-              className="flex items-center font-headings text-display uppercase"
+              className="flex items-center font-headings text-body font-bold uppercase"
               href={`/files/${slug}.pdf`}
               target="_blank"
               passHref

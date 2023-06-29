@@ -26,7 +26,7 @@ const links = [
 // header component
 const Header = () => {
   return (
-    <header className="fixed top-0 z-10 h-header-mobile w-screen font-display text-display font-medium text-white mix-blend-difference md:h-header">
+    <header className="fixed top-0 z-10 h-header-mobile w-screen select-none font-display text-body font-medium text-white mix-blend-difference md:h-header">
       <nav className="flex h-full w-full flex-col items-center justify-center gap-1 px-2 md:flex-row md:justify-between md:gap-0">
         <Link
           href="/"

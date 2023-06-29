@@ -6,7 +6,7 @@ import type BlockProps from "@/types/BlockProps";
 export const H1: FunctionComponent<BlockProps> = ({ children, className }) => {
   return (
     <h1
-      className={`w-full font-headings text-body font-bold lowercase ${className}`}
+      className={`w-full font-headings text-body font-bold uppercase ${className}`}
     >
       {children}
     </h1>
@@ -16,9 +16,7 @@ export const H1: FunctionComponent<BlockProps> = ({ children, className }) => {
 // h2 block component
 export const H2: FunctionComponent<BlockProps> = ({ children, className }) => {
   return (
-    <h2
-      className={`w-full font-headings text-body font-medium lowercase ${className}`}
-    >
+    <h2 className={`w-full font-headings text-body uppercase ${className}`}>
       {children}
     </h2>
   );
@@ -61,7 +59,7 @@ export const A: FunctionComponent<BlockProps> = ({
 
   return (
     <Link
-      className={`custom-link bg-gradient-to-b from-[#fafafa_50%] to-[#d4d4d8_50%] dark:from-[#18181B_50%] dark:to-[#3f3f46_50%] ${className}`}
+      className={`custom-link bg-gradient-to-b from-[#fafafb_50%] to-[#d4d4d8_50%] dark:from-[#18181B_50%] dark:to-[#3f3f46_50%] ${className}`}
       href={isInternal ? link : href}
       target="_blank"
       rel="noopener noreferrer"

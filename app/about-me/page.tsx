@@ -26,7 +26,7 @@ const AboutMe = async () => {
   return (
     <section className="mx-auto mb-4 mt-2 px-0 md:max-w-[133vh] md:px-4">
       <div className="mx-2 flex items-end md:mx-0 md:-mt-header md:min-h-[75svh]">
-        <h1 className="font-headings text-headings font-medium uppercase">
+        <h1 className="select-none font-headings text-headings font-medium uppercase">
           {pageContent.title}
         </h1>
       </div>
@@ -36,7 +36,7 @@ const AboutMe = async () => {
         }`}
       >
         <Image
-          className="rounded-xl object-cover"
+          className="object-cover md:rounded-xl"
           src={pageContent.image}
           alt={pageContent.title}
           fill={true}
