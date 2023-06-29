@@ -51,4 +51,8 @@
   .custom-link:hover {
     background-position-y: 100%;
   }
+
+  .group {
+    transition: flex-basis 500ms ease-in-out;
+  }
 }

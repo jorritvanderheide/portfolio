@@ -1,6 +1,7 @@
 import { FunctionComponent } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import AnimatedLink from "./AnimatedLink";
 import type ShowcaseItemProps from "@/types/ShowcaseItemProps";
 
 // showcase item component
@@ -12,14 +13,14 @@ const ShowcaseItem: FunctionComponent<ShowcaseItemProps> = ({
   title,
 }) => {
   return (
-    <article className="h-full flex-shrink-0 snap-center snap-always pb-2 pt-9 md:pb-4 md:pt-7">
-      <div className="flex h-full flex-col gap-3">
+    <article className="group h-full w-full basis-1/5 hover:basis-2/5">
+      <div className="flex h-full w-full flex-col gap-3">
         <Link
           href={`/learning-activities/${slug}`}
           className="h-full"
           passHref
         >
-          <figure className="relative h-full overflow-hidden">
+          <figure className="relative h-full w-full overflow-hidden">
             <Image
               className="rounded-3xl object-cover"
               src={image}
@@ -29,10 +30,6 @@ const ShowcaseItem: FunctionComponent<ShowcaseItemProps> = ({
             />
           </figure>
         </Link>
-        <div className="flex select-none justify-between gap-4 md:gap-0">
-          <p className="font-sora font-semibold uppercase">{title}</p>
-          <p className="font-sora font-medium uppercase">{index}/5</p>
-        </div>
       </div>
     </article>
   );

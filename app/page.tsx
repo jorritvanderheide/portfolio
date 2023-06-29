@@ -21,8 +21,8 @@ const ShowcasePage = async () => {
   const showcaseArray = await getShowcaseItems();
 
   return (
-    <section className="-mt-header-mobile h-[100svh] w-screen md:-mt-header ">
-      <div className="mx-auto flex h-full w-full snap-y snap-mandatory flex-col gap-2 overflow-y-scroll px-2 md:px-4">
+    <section className="mb-4 mt-2 h-[calc(100svh_-_14em)] px-0 md:h-[calc(100vh_-_11em)]">
+      <div className="mx-auto flex h-full w-full flex-col gap-2 px-2 md:flex-row md:px-4">
         {showcaseArray?.map((item: ShowcaseItemProps, index: number) => (
           <ShowcaseItem
             key={index}
