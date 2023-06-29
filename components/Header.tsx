@@ -26,14 +26,16 @@ const links = [
 // header component
 const Header = () => {
   return (
-    <header className="fixed top-0 z-10 h-header-mobile w-screen select-none font-display text-body font-medium text-white mix-blend-difference md:h-header">
-      <nav className="flex h-full w-full flex-col items-center justify-center gap-1 px-2 md:flex-row md:justify-between md:gap-0">
-        <Link
-          href="/"
-          passHref
-        >
-          <AnimatedLink>Jorrit v/d Heide</AnimatedLink>
-        </Link>
+    <header className="fixed top-0 z-10 h-header-mobile w-screen select-none font-display text-body font-medium text-gray-50 mix-blend-difference md:h-header">
+      <nav className="flex h-full w-full flex-col items-center justify-center gap-1 px-2 md:flex-row md:justify-between md:gap-0 md:px-4">
+        <div className="relative flex items-center gap-1 md:gap-2">
+          <Link
+            href="/"
+            passHref
+          >
+            <AnimatedLink>Jorrit v/d Heide</AnimatedLink>
+          </Link>
+        </div>
         <ul className="flex w-full justify-between gap-1 md:w-auto md:justify-normal">
           {links.map((link) => (
             <li key={link.slug}>

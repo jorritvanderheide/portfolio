@@ -21,12 +21,13 @@ const ShowcasePage = async () => {
   const showcaseArray = await getShowcaseItems();
 
   return (
-    <section className="-mt-header-mobile h-[100svh] w-screen md:-mt-header">
-      <div className="h-full w-full snap-y snap-mandatory overflow-y-scroll">
+    <section className="-mt-header-mobile h-[100svh] w-screen md:-mt-header ">
+      <div className="mx-auto flex h-full w-full snap-y snap-mandatory flex-col gap-2 overflow-y-scroll px-2 md:px-4">
         {showcaseArray?.map((item: ShowcaseItemProps, index: number) => (
           <ShowcaseItem
             key={index}
             image={item.image}
+            index={index + 1}
             priority={index === 0 ? true : false}
             slug={item.slug}
             title={item.title}

@@ -22,7 +22,7 @@ const LearningActivitiesItem: FunctionComponent<
               }`}
             >
               <Image
-                className="object-covers rounded-xl"
+                className="object-covers rounded-3xl"
                 src={image}
                 alt={title}
                 fill={true}
@@ -30,7 +30,7 @@ const LearningActivitiesItem: FunctionComponent<
                 sizes={`(min-width: 769px) 40vw, (min-width: 1921px) 25vw, 90vw)`}
               />
             </figure>
-            <p className="select-none font-headings text-body uppercase">
+            <p className="select-none font-headings text-body font-medium uppercase">
               {title}
             </p>
           </div>

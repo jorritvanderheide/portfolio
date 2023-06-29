@@ -57,7 +57,7 @@ const RootLayout: FunctionComponent<RootLayoutProps> = ({ children }) => {
         className={`text-body ${equity.variable} ${sora.variable} ${spaceGrotesk.variable}`}
       >
         <Header />
-        <main className="absolute w-screen pt-header-mobile md:pt-header">
+        <main className="max-w-screen pt-header-mobile md:pt-header">
           {children}
         </main>
       </body>

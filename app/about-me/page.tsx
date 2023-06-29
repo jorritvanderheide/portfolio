@@ -36,7 +36,7 @@ const AboutMe = async () => {
         }`}
       >
         <Image
-          className="object-cover md:rounded-xl"
+          className="object-cover md:rounded-3xl"
           src={pageContent.image}
           alt={pageContent.title}
           fill={true}

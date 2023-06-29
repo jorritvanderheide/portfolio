@@ -31,7 +31,15 @@
   }
 
   ::-webkit-scrollbar {
-    display: none;
+    @apply w-[0.33em];
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-50 dark:bg-gray-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-gray-300 dark:bg-gray-700;
   }
 
   /* other elements */
