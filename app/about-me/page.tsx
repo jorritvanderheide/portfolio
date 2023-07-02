@@ -41,7 +41,7 @@ const AboutMe = async () => {
           alt={pageContent.title}
           fill={true}
           priority={true}
-          sizes={`(min-width: 768px) 90vw, 100vw)`}
+          sizes={`(min-width: 768px) 90vw, 100vw`}
         />
       </figure>
       <Container>

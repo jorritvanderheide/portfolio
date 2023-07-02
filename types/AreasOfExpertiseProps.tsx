@@ -1,12 +1,7 @@
-// learning activity props
+// areas of expertise props
 export default interface LearningActivityProps {
   areas: Array<areasObject>;
-  hasReport: boolean;
-  image: string;
-  isPortrait: boolean;
-  logo: string;
-  markdown: string;
-  title: string;
+  className?: string;
 }
 
 export interface areasObject {

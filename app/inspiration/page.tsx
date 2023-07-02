@@ -28,6 +28,7 @@ const InspirationPage = async () => {
             <InspirationItem
               key={index}
               description={inspirationItem.description}
+              index={index}
               title={inspirationItem.title}
               url={inspirationItem.url}
             />

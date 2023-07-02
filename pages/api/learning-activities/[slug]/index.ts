@@ -35,9 +35,17 @@ export default async function handle(
 
     const metadata = data.results[0];
 
-    let isPortrait: boolean = false;
+    interface areasObject {
+      area: string;
+      color: string;
+      text: string;
+    }
+
+    let areas: Array<areasObject> = [];
     let hasReport: boolean = false;
     let image: string = "";
+    let isPortrait: boolean = false;
+    let logo: string = "";
     let title: string = "";
 
     if ("properties" in metadata) {
@@ -48,6 +56,77 @@ export default async function handle(
       if ("Report" in metadata.properties) {
         if ("checkbox" in metadata.properties.Report)
           hasReport = metadata.properties.Report.checkbox;
+      }
+      if ("Logo" in metadata.properties) {
+        if ("url" in metadata.properties.Logo) {
+          logo = metadata.properties.Logo.url!;
+        }
+      }
+      if ("BE" in metadata.properties) {
+        if ("rich_text" in metadata.properties.BE) {
+          if (metadata.properties.BE.rich_text[0]) {
+            areas.push({
+              area: "B&E",
+              color: "bg-[#291e39]",
+              text: metadata.properties.BE.rich_text[0].plain_text,
+            });
+          }
+        }
+      }
+      if ("CA" in metadata.properties) {
+        if ("rich_text" in metadata.properties.CA) {
+          if (metadata.properties.CA.rich_text[0]) {
+            areas.push({
+              area: "C&A",
+              color: "bg-[#17bb54]",
+              text: metadata.properties.CA.rich_text[0].plain_text,
+            });
+          }
+        }
+      }
+      if ("DRP" in metadata.properties) {
+        if ("rich_text" in metadata.properties.DRP) {
+          if (metadata.properties.DRP.rich_text[0]) {
+            areas.push({
+              area: "DR&P",
+              color: "bg-[#edb5bc]",
+              text: metadata.properties.DRP.rich_text[0].plain_text,
+            });
+          }
+        }
+      }
+      if ("MDC" in metadata.properties) {
+        if ("rich_text" in metadata.properties.MDC) {
+          if (metadata.properties.MDC.rich_text[0]) {
+            areas.push({
+              area: "MD&C",
+              color: "bg-[#0d496e]",
+              text: metadata.properties.MDC.rich_text[0].plain_text,
+            });
+          }
+        }
+      }
+      if ("TR" in metadata.properties) {
+        if ("rich_text" in metadata.properties.TR) {
+          if (metadata.properties.TR.rich_text[0]) {
+            areas.push({
+              area: "T&R",
+              color: "bg-[#0fbca8]",
+              text: metadata.properties.TR.rich_text[0].plain_text,
+            });
+          }
+        }
+      }
+      if ("US" in metadata.properties) {
+        if ("rich_text" in metadata.properties.US) {
+          if (metadata.properties.US.rich_text[0]) {
+            areas.push({
+              area: "U&S",
+              color: "bg-[#f9d172]",
+              text: metadata.properties.US.rich_text[0].plain_text,
+            });
+          }
+        }
       }
       if ("title" in metadata.properties.Name) {
         title = metadata.properties.Name.title[0].plain_text;
@@ -64,9 +143,11 @@ export default async function handle(
     const contentString: string = contentObject.parent;
 
     const learningActivity: LearningActivityProps = {
+      areas: areas,
       hasReport: hasReport,
       image: image,
       isPortrait: isPortrait,
+      logo: logo,
       markdown: contentString,
       title: title,
     };

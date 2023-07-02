@@ -42,7 +42,7 @@
     @apply rounded-full bg-gray-300 dark:bg-gray-700;
   }
 
-  /* other elements */
+  /* links */
   .custom-link {
     background-size: auto 175%;
     transition: background 0.3s ease-in-out;
@@ -52,7 +52,8 @@
     background-position-y: 100%;
   }
 
-  .group {
-    transition: flex-basis 500ms ease-in-out;
+  /* tooltip */
+  .react-tooltip {
+    @apply max-w-[45ch] !rounded-3xl !bg-gray-200 !p-1 font-body !text-body !text-gray-900 !opacity-100 dark:!bg-gray-700 dark:!text-gray-50;
   }
 }

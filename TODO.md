@@ -2,28 +2,22 @@
 
 ## showcase
 
-fix height on mobile
+..
 
 ## about me
 
-links to learning activities
-style links
+..
 
 ## learning activities
 
-filters
-search bar
-area of expertise labels
-links between learning activities + external links
-filosofie toevoegen als learning activity
-loading page
+filosofie toevoegen als learning activity + studio v/d heide
+toevoegen per aoe wat ik geleerd heb
+endorsement jeroen
 
 ## inspiration
 
-find suitable format
 add content
 
 ## growth
 
-links to learning activities
-style links
+..

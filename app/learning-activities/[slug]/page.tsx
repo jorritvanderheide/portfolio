@@ -2,8 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import Container from "@/components/Container";
-import { H1, H2, P, Figure, A } from "@/components/Blocks";
 import AnimatedLink from "@/components/AnimatedLink";
+import AreasOfExpertise from "@/components/AreasOfExpertise";
+import { H1, H2, P, Figure, A } from "@/components/Blocks";
 import type LearningActivityProps from "@/types/LearningActivityProps";
 import type LearningActivitiesItemProps from "@/types/LearningActivitiesItemProps";
 
@@ -48,13 +49,27 @@ const LearningActivityPage = async ({
 
   return (
     <section className="mx-auto mb-4 mt-2 px-0 md:max-w-[133vh] md:px-4">
-      <div className="mx-2 flex items-end md:mx-0 md:-mt-header md:min-h-[75svh]">
-        <h1 className="select-none font-headings text-headings font-medium uppercase">
-          {learningActivity.title}
-        </h1>
+      <div className="mx-2 flex items-end md:mx-0">
+        <div className="flex w-[calc(100vw_-_4em)] justify-between gap-2 md:w-full">
+          <h1 className="-mb-[0.25em] w-full select-none font-headings text-headings font-medium uppercase">
+            {learningActivity.title}
+          </h1>
+          {learningActivity.logo && (
+            <figure className="relative aspect-square h-auto w-[10vw] self-end bg-gray-50 dark:bg-gray-900 md:w-[5vw]">
+              <Image
+                className="object-contain mix-blend-difference"
+                src={learningActivity.logo}
+                alt="client logo"
+                fill={true}
+                priority={true}
+                sizes="10vw"
+              />
+            </figure>
+          )}
+        </div>
       </div>
       <figure
-        className={`relative my-4 h-auto w-full ${
+        className={`relative mb-4 mt-[4.25em] h-auto w-full ${
           learningActivity.isPortrait ? "aspect-[3/4]" : "aspect-[4/3]"
         }`}
       >
@@ -68,6 +83,10 @@ const LearningActivityPage = async ({
         />
       </figure>
       <Container>
+        <AreasOfExpertise
+          areas={learningActivity.areas}
+          className="hidden md:block"
+        />
         <ReactMarkdown
           // eslint-disable-next-line react/no-children-prop
           children={learningActivity.markdown}
