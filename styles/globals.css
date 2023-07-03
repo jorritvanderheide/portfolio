@@ -52,8 +52,12 @@
     background-position-y: 100%;
   }
 
-  /* tooltip */
-  .react-tooltip {
-    @apply max-w-[45ch] !rounded-3xl !bg-gray-200 !p-1 font-body !text-body !text-gray-900 !opacity-100 dark:!bg-gray-700 dark:!text-gray-50;
+  /* blockquotes */
+  blockquote {
+    @apply mt-1 border-l-4 border-gray-300 pl-1 dark:border-gray-600;
+  }
+
+  blockquote + blockquote {
+    @apply !mt-0 border-none text-right;
   }
 }

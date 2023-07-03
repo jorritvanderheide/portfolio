@@ -17,9 +17,10 @@ const AnimatedLink: FunctionComponent<AnimatedLinkProps> = ({
       className={className}
       whileHover={{
         scale: scaleValue,
-        transition: { duration: 0.3 },
+        transition: { duration: 0.4 },
         y: 2,
       }}
+      whileTap={{ scale: 0.9 }}
     >
       {children}
     </motion.div>

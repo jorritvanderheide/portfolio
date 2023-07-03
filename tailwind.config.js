@@ -12,6 +12,7 @@ export const theme = {
     body: ["var(--font-body)"],
     display: ["var(--font-display)"],
     headings: ["var(--font-headings)"],
+    lists: ["var(--font-lists)"],
   },
   fontSize: {
     body: [

@@ -68,3 +68,16 @@ export const A: FunctionComponent<BlockProps> = ({
     </Link>
   );
 };
+
+// q block component
+export const Q: FunctionComponent<BlockProps> = ({ children, className }) => {
+  return (
+    <blockquote
+      className={`w-full font-body italic ${
+        className !== undefined ? className : null
+      }`}
+    >
+      {children}
+    </blockquote>
+  );
+};

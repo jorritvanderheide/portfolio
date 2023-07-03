@@ -1,7 +1,7 @@
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import Container from "@/components/Container";
-import { H1, H2, P, Figure, A } from "@/components/Blocks";
+import { H1, H2, P, Figure, A, Q } from "@/components/Blocks";
 import type PageContentProps from "@/types/PageContentProps";
 
 // fetch page content from api
@@ -64,6 +64,7 @@ const AboutMe = async () => {
               </Figure>
             ),
             a: ({ node, ...props }) => <A {...props} />,
+            blockquote: ({ node, ...props }) => <Q {...props} />,
           }}
         />
       </Container>

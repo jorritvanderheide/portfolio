@@ -4,7 +4,7 @@ import ReactMarkdown from "react-markdown";
 import Container from "@/components/Container";
 import AnimatedLink from "@/components/AnimatedLink";
 import AreasOfExpertise from "@/components/AreasOfExpertise";
-import { H1, H2, P, Figure, A } from "@/components/Blocks";
+import { H1, H2, P, Figure, A, Q } from "@/components/Blocks";
 import type LearningActivityProps from "@/types/LearningActivityProps";
 import type LearningActivitiesItemProps from "@/types/LearningActivitiesItemProps";
 
@@ -55,16 +55,26 @@ const LearningActivityPage = async ({
             {learningActivity.title}
           </h1>
           {learningActivity.logo && (
-            <figure className="relative aspect-square h-auto w-[10vw] self-end bg-gray-50 dark:bg-gray-900 md:w-[5vw]">
-              <Image
-                className="object-contain mix-blend-difference"
-                src={learningActivity.logo}
-                alt="client logo"
-                fill={true}
-                priority={true}
-                sizes="10vw"
-              />
-            </figure>
+            <Link
+              className="self-end"
+              href="https://www.ri.se/en"
+              rel="noreferrer noopener"
+              target="_blank"
+              passHref
+            >
+              <AnimatedLink>
+                <figure className="relative aspect-square h-auto w-[10vw] bg-gray-50 dark:bg-gray-900 md:w-[5vw]">
+                  <Image
+                    className="object-contain mix-blend-difference"
+                    src={learningActivity.logo}
+                    alt="client logo"
+                    fill={true}
+                    priority={true}
+                    sizes="10vw"
+                  />
+                </figure>
+              </AnimatedLink>
+            </Link>
           )}
         </div>
       </div>
@@ -85,7 +95,7 @@ const LearningActivityPage = async ({
       <Container>
         <AreasOfExpertise
           areas={learningActivity.areas}
-          className="hidden md:block"
+          className="hidden md:flex"
         />
         <ReactMarkdown
           // eslint-disable-next-line react/no-children-prop
@@ -96,6 +106,7 @@ const LearningActivityPage = async ({
             p: ({ node, ...props }) => <P {...props} />,
             img: ({ node, ...props }) => <Figure {...props} />,
             a: ({ node, ...props }) => <A {...props} />,
+            blockquote: ({ node, ...props }) => <Q {...props} />,
           }}
         />
         {learningActivity.hasReport && (
