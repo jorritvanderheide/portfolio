@@ -33,12 +33,6 @@ const equity = localFont({
   variable: "--font-body",
 });
 
-const concourse = localFont({
-  display: "swap",
-  src: "../fonts/concourse_index_regular.woff2",
-  variable: "--font-lists",
-});
-
 const sora = Sora({
   display: "swap",
   subsets: ["latin"],
@@ -60,7 +54,7 @@ const RootLayout: FunctionComponent<RootLayoutProps> = ({ children }) => {
   return (
     <html lang="en">
       <body
-        className={`text-body ${equity.variable} ${sora.variable} ${spaceGrotesk.variable} ${concourse.variable}`}
+        className={`text-body ${equity.variable} ${sora.variable} ${spaceGrotesk.variable}`}
       >
         <Header />
         <main className="max-w-screen pt-header-mobile md:pt-header">

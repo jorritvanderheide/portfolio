@@ -3,6 +3,7 @@
 import { FunctionComponent, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type AreasOfExpertiseProps from "@/types/AreasOfExpertiseProps";
+import AnimatedLink from "./AnimatedLink";
 
 // learning activity component
 const AreasOfExpertise: FunctionComponent<AreasOfExpertiseProps> = ({
@@ -14,49 +15,62 @@ const AreasOfExpertise: FunctionComponent<AreasOfExpertiseProps> = ({
   return (
     <>
       {areas?.length > 0 && (
-        <div
-          className={`mb-2 flex select-none justify-normal self-start font-headings text-[0.75em] ${className}`}
+        <motion.div
+          className={`mb-2 flex select-none self-start font-headings text-[0.75em] ${className}`}
+          layout="position"
+          transition={{ layout: { duration: 0.4, type: "spring" } }}
         >
           {areas.map((tag, index) => (
             <div key={index}>
               <AnimatePresence>
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.75 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4, type: "spring", delay: 1 }}
-                  className={`group mr-1 flex items-center whitespace-nowrap rounded-full bg-gray-200 outline-none hover:cursor-pointer dark:bg-gray-700 ${
-                    isOpen !== tag.area && isOpen !== ""
-                      ? "mr-0 hidden opacity-0"
-                      : "opacity-100"
-                  }`}
-                  onMouseEnter={() => setIsOpen(tag.area)}
-                  onMouseLeave={() => setIsOpen("")}
-                >
-                  <div
-                    id={`area-${index.toString()}`}
-                    className={`rounded-full bg-gray-200 px-[0.5em] py-[0.15em] group-hover:bg-gray-300 dark:bg-gray-700 dark:group-hover:bg-gray-600`}
-                  >
-                    <span className={`text-white mix-blend-difference`}>
-                      {tag.area}
-                    </span>
-                  </div>
-                  <AnimatePresence>
-                    {isOpen === tag.area && (
+                <AnimatedLink>
+                  {(isOpen === tag.area || isOpen == "") && (
+                    <motion.div
+                      className="group mr-1 flex cursor-pointer items-center whitespace-nowrap rounded-full bg-gray-200 outline-none dark:bg-gray-700"
+                      initial={{ opacity: 0, scale: 0.75 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.75 }}
+                      transition={{
+                        layout: { duration: 0.4, type: "spring" },
+                      }}
+                      layout
+                      onClick={() =>
+                        isOpen === tag.area
+                          ? setIsOpen("")
+                          : setIsOpen(tag.area)
+                      }
+                    >
                       <motion.div
-                        className="py-[0.15em] pl-[0.5em] pr-[0.75em] text-[0.9em]"
-                        initial={{ opacity: 0, x: -100 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.4, type: "spring" }}
+                        className={`self-start rounded-full bg-gray-200 px-[0.5em] py-[0.15em] font-medium dark:bg-gray-700 ${
+                          isOpen === tag.area &&
+                          "!bg-gray-300 dark:!bg-gray-600"
+                        }`}
+                        layout="position"
                       >
-                        {tag.text}
+                        <p>{tag.area}</p>
                       </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
+
+                      {isOpen === tag.area && (
+                        <motion.div
+                          className="py-[0.15em] pl-[0.5em] pr-[0.75em]"
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          initial={{ opacity: 0 }}
+                          transition={{
+                            duration: 0.4,
+                            type: "spring",
+                          }}
+                        >
+                          <p className="text-[0.9em]">{tag.text}</p>
+                        </motion.div>
+                      )}
+                    </motion.div>
+                  )}
+                </AnimatedLink>
               </AnimatePresence>
             </div>
           ))}
-        </div>
+        </motion.div>
       )}
     </>
   );
