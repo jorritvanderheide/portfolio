@@ -1,5 +1,5 @@
 {
-  description = "A Nix-flake for the Toekomstpraktijken local development environment";
+  description = "A Nix-flake for the local development environment for my personal portfolio and blog";
   inputs = {
     # Specify the Nixpkgs repository version to use for building the development environment
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
